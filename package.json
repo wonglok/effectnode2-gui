@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@hscmap/vue-menu": "^2.10.0",
+    "@hscmap/vue-window": "^2.4.2",
+    "autoprefixer": "^9.7.4",
     "core-js": "^3.6.4",
+    "tailwindcss": "^1.2.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
