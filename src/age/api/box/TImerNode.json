@@ -1,8 +1,8 @@
 {
-  "_id": "_77695719_",
-  "title": "FloatNode",
-  "NodeClass": "FloatNode",
-  "boxColor": "purple",
+  "_id": "_21606661_",
+  "title": "TimerNode",
+  "NodeClass": "TimerNode",
+  "boxColor": "red",
   "isMaterialNode": false,
   "previewType": false,
   "type": "purple",
@@ -10,8 +10,8 @@
   "order": 0,
   "resize": true,
   "pos": {
-    "x": 15,
-    "y": 15,
+    "x": 139,
+    "y": 490,
     "w": 161,
     "h": 62,
     "s": 1
@@ -19,14 +19,14 @@
   "inputs": [],
   "outputs": [
     {
-      "label": "float",
-      "boxID": "_77695719_",
+      "label": "time",
+      "boxID": "_21606661_",
       "io": "output",
       "type": "float",
-      "_id": "_98478489_",
+      "_id": "_60338823_",
       "defaults": "0.0"
     }
   ],
   "isNode": true,
-  "value": "1.0"
+  "value": "1.24"
 }

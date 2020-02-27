@@ -22,7 +22,7 @@ export default {
     onInput () {
       this.win.color = this.colors.hex
       window.dispatchEvent(new Event('save'))
-      window.dispatchEvent(new Event('pulse'))
+      window.dispatchEvent(new Event('update-ui-inputs'))
     }
   }
 }

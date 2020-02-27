@@ -5,11 +5,11 @@ const Nodes = {
 export const makeNodeByWin = ({ win }) => {
   let inst = false
   if (win.NodeClass === 'MathNode') {
-    if (win.NodeClass === 'MathNode' && win.ArgsSize === 1) {
+    if (win.ArgsSize === 1) {
       inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), Nodes.MathNode[win.MathMode]])
-    } else if (win.NodeClass === 'MathNode' && win.ArgsSize === 2) {
+    } else if (win.ArgsSize === 2) {
       inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), new Nodes.FloatNode(0), Nodes.MathNode[win.MathMode]])
-    } else if (win.NodeClass === 'MathNode' && win.ArgsSize === 3) {
+    } else if (win.ArgsSize === 3) {
       inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), new Nodes.FloatNode(1), new Nodes.FloatNode(0.5), Nodes.MathNode[win.MathMode]])
     }
   } else {
@@ -22,11 +22,11 @@ export const makeMat = async ({ wins, connections }) => {
   const nodes = {}
 
   // instantiate
-  wins.filter(e => e.isMaterialNode || e.isNode).forEach((win) => {
+  wins.filter(e => e.isNode).forEach((win) => {
     nodes[win._id] = makeNodeByWin({ win })
   })
 
-  // initialization
+  // initValues
   const initValues = () => {
     wins.filter(e => e.NodeClass === 'ColorNode').forEach((win) => {
       if (nodes[win._id]) {
@@ -39,9 +39,9 @@ export const makeMat = async ({ wins, connections }) => {
       }
     })
   }
-  initValues()
 
-  window.addEventListener('pulse', () => {
+  initValues()
+  window.addEventListener('update-ui-inputs', () => {
     initValues()
   })
 
@@ -55,11 +55,11 @@ export const makeMat = async ({ wins, connections }) => {
 
   // console.log(wins, connections)
 
-  const root = wins.find(e => e.isMaterialNode)
-  if (root) {
-    const rootMat = nodes[root._id]
-    rootMat.needsUpdate = true
-    return rootMat
+  const rootNode = wins.find(e => e.isMaterialNode)
+  if (rootNode) {
+    const rootMaterial = nodes[rootNode._id]
+    rootMaterial.needsUpdate = true
+    return rootMaterial
   }
 }
 

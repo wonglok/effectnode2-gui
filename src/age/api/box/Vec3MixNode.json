@@ -1,17 +1,17 @@
 {
-  "_id": "_42055345_",
-  "title": "MixFloatNode",
+  "_id": "_73502081_",
+  "title": "Vec3MixNode",
   "NodeClass": "MathNode",
   "boxColor": "purple",
-  "isMaterialNode": true,
+  "isMaterialNode": false,
   "previewType": false,
   "type": "purple",
   "transition": "",
   "order": 0,
   "resize": true,
   "pos": {
-    "x": 401,
-    "y": 425,
+    "x": 450,
+    "y": 260,
     "w": 161,
     "h": 114,
     "s": 1
@@ -19,37 +19,37 @@
   "inputs": [
     {
       "label": "a",
-      "boxID": "_42055345_",
+      "boxID": "_73502081_",
       "io": "input",
-      "type": "float",
-      "_id": "_32007140_",
-      "defaults": "0.0"
+      "type": "vec3",
+      "_id": "_16566180_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
     },
     {
       "label": "b",
-      "boxID": "_42055345_",
+      "boxID": "_73502081_",
       "io": "input",
-      "type": "float",
-      "_id": "_16227874_",
-      "defaults": "0.0"
+      "type": "vec3",
+      "_id": "_16809735_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
     },
     {
       "label": "c",
-      "boxID": "_42055345_",
+      "boxID": "_73502081_",
       "io": "input",
-      "type": "float",
-      "_id": "_11256745_",
-      "defaults": "0.0"
+      "type": "vec3",
+      "_id": "_13668634_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
     }
   ],
   "outputs": [
     {
       "label": "out",
-      "boxID": "_42055345_",
+      "boxID": "_73502081_",
       "io": "output",
-      "type": "float",
-      "_id": "_606456_",
-      "defaults": "0.0"
+      "type": "vec3",
+      "_id": "_58741374_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
     }
   ],
   "isNode": true,

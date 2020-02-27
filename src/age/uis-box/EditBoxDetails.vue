@@ -24,8 +24,11 @@ limitations under the License.
     </div>
     <div class="age-addbox-content scroller" ref="scroller">
       <h1>
-        Edit Module
+        Advanced Module Edit
       </h1>
+      <h2 @click="copyModuleToClipBoard()">
+        Copy Module to Clipboard
+      </h2>
       <h2 @click="cloneModule()">
         Clone Module
       </h2>
@@ -43,10 +46,19 @@ limitations under the License.
         Node Class
         <input class="border border-gray-200 p-2 m-1" type="text" v-model="win.NodeClass"  />
       </p>
+      <!-- <p>
+        MathNode Data Size
+        <select v-model="win.DataSize">
+          <option :value="1">Float</option>
+          <option :value="2">Vec2</option>
+          <option :value="3">Vec3</option>
+          <option :value="4">Vec4</option>
+        </select>
+      </p> -->
 
       <p>
         MathNode Args Size
-        <select v-model="win.ArgsSize">
+        <select v-model="win.ArgsSize" disabled>
           <option :value="1">1</option>
           <option :value="2">2</option>
           <option :value="3">3</option>
@@ -180,6 +192,7 @@ limitations under the License.
 <script>
 import * as AGE from '../api/age'
 import VJsoneditor from 'v-jsoneditor'
+import copy from 'copy-to-clipboard'
 
 export default {
   components: {
@@ -226,6 +239,11 @@ export default {
     window.addEventListener('keydown', close, { passive: false })
   },
   methods: {
+    copyModuleToClipBoard () {
+      const str = JSON.stringify(this.win, null, '  ')
+      copy(str)
+      window.alert('copied')
+    },
     onSelectMath () {
       if (this.win.MathMode in this.MathNode.A1) {
         this.win.ArgsSize = 1

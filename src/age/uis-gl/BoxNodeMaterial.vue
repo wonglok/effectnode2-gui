@@ -135,6 +135,7 @@ export default {
     const mesh = this.mesh = new THREE.Mesh(geometry, undefined)
     scene.add(mesh)
     scene.add(new THREE.HemisphereLight(0xaaaaaa, 0x444444))
+
     // var light = new THREE.DirectionalLight(0xffffff, 0.5)
     // light.position.set(1, 1, 1)
     // scene.add(light)

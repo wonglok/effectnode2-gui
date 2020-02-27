@@ -2,18 +2,18 @@
   "_id": "_26106057_",
   "title": "ColorNode",
   "NodeClass": "ColorNode",
-  "boxColor": "purple",
-  "isMaterialNode": true,
+  "boxColor": "green",
+  "isMaterialNode": false,
   "previewType": false,
   "type": "purple",
   "transition": "",
   "order": 0,
   "resize": true,
   "pos": {
-    "x": 15,
-    "y": 15,
-    "w": 234,
-    "h": 45,
+    "x": 56,
+    "y": 157,
+    "w": 218,
+    "h": 62,
     "s": 1
   },
   "inputs": [],
@@ -28,5 +28,5 @@
     }
   ],
   "isNode": true,
-  "color": "#998234"
+  "color": "#4EAD4D"
 }
