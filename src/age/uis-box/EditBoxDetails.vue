@@ -45,6 +45,31 @@ limitations under the License.
       </p>
 
       <p>
+        MathNode Args Size
+        <select v-model="win.ArgsSize">
+          <option :value="1">1</option>
+          <option :value="2">2</option>
+          <option :value="3">3</option>
+        </select>
+      </p>
+
+      <p>
+        MathNode Mode
+        <select v-model="win.MathMode" @input="onSelectMath()" @change="onSelectMath()">
+          <option :value="false">None</option>
+          <optgroup label="Arg Size 1">
+            <option :key="key" v-for="(val, key) in MathNode.A1" :value="key">{{ key }}</option>
+          </optgroup>
+          <optgroup label="Arg Size 2">
+            <option :key="key" v-for="(val, key) in MathNode.A2" :value="key">{{ key }}</option>
+          </optgroup>
+          <optgroup label="Arg Size 3">
+            <option :key="key" v-for="(val, key) in MathNode.A3" :value="key">{{ key }}</option>
+          </optgroup>
+        </select>
+      </p>
+
+      <p>
         Resize Module Box
         <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.resize"  />
       </p>
@@ -168,6 +193,7 @@ export default {
   },
   data () {
     return {
+      MathNode: AGE.MathNode,
       colorTypes: AGE.boxColorTypes,
       opts: {
         mode: 'code',
@@ -200,6 +226,16 @@ export default {
     window.addEventListener('keydown', close, { passive: false })
   },
   methods: {
+    onSelectMath () {
+      if (this.win.MathMode in this.MathNode.A1) {
+        this.win.ArgsSize = 1
+      } else if (this.win.MathMode in this.MathNode.A2) {
+        this.win.ArgsSize = 2
+      } else if (this.win.MathMode in this.MathNode.A3) {
+        this.win.ArgsSize = 3
+      }
+      window.dispatchEvent(new Event('compile-shader'))
+    },
     cloneModule () {
       const mod = AGE.BOX.cloneModule(this.win)
       this.wins.push(mod)

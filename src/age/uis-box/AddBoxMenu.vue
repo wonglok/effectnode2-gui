@@ -46,8 +46,8 @@ limitations under the License.
         </div>
       </div> -->
       <div>
-        <div :key="key" v-for="(value, key) in list" class=" cursor-pointer p-2 m-2 inline-block bg-gray-400" @click="clone(value)">
-          {{ key }}
+        <div :key="item.key" v-for="(item) in list" class=" cursor-pointer p-2 m-2 inline-block bg-gray-400" @click="clone(item.value)">
+          {{ item.key }}
         </div>
       </div>
     </div>
@@ -68,7 +68,14 @@ export default {
   },
   data () {
     return {
-      list: AGE.Market
+      list: Object.keys(AGE.Market).map(kn => {
+        return {
+          key: kn,
+          value: AGE.Market[kn]
+        }
+      }).sort((a, b) => {
+        return a.key - b.key
+      })
     }
   },
   mounted () {

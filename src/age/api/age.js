@@ -21,6 +21,59 @@ export const BOX = require('./age-box.js')
 export const VFX = require('./age-shader.js')
 export const Market = require('./age-box-market.js')
 
+const A1 = {}
+const A2 = {}
+const A3 = {}
+export const MathNode = {
+  A1,
+  A2,
+  A3
+}
+
+// 1 input
+A1.RAD = 'radians'
+A1.DEG = 'degrees'
+A1.EXP = 'exp'
+A1.EXP2 = 'exp2'
+A1.LOG = 'log'
+A1.LOG2 = 'log2'
+A1.SQRT = 'sqrt'
+A1.INV_SQRT = 'inversesqrt'
+A1.FLOOR = 'floor'
+A1.CEIL = 'ceil'
+A1.NORMALIZE = 'normalize'
+A1.FRACT = 'fract'
+A1.SATURATE = 'saturate'
+A1.SIN = 'sin'
+A1.COS = 'cos'
+A1.TAN = 'tan'
+A1.ASIN = 'asin'
+A1.ACOS = 'acos'
+A1.ARCTAN = 'atan'
+A1.ABS = 'abs'
+A1.SIGN = 'sign'
+A1.LENGTH = 'length'
+A1.NEGATE = 'negate'
+A1.INVERT = 'invert'
+
+// 2 inputs
+A2.MIN = 'min'
+A2.MAX = 'max'
+A2.MOD = 'mod'
+A2.STEP = 'step'
+A2.REFLECT = 'reflect'
+A2.DISTANCE = 'distance'
+A2.DOT = 'dot'
+A2.CROSS = 'cross'
+A2.POW = 'pow'
+
+// 3 inputs
+A3.MIX = 'mix'
+A3.CLAMP = 'clamp'
+A3.REFRACT = 'refract'
+A3.SMOOTHSTEP = 'smoothstep'
+A3.FACEFORWARD = 'faceforward'
+
 /*
 ----------------------------------
 

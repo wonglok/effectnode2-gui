@@ -1,135 +1,604 @@
 {
   "wins": [
     {
-      "_id": "_20565088_",
-      "title": "Default Box",
+      "_id": "_99107395_",
+      "title": "Preview Box",
       "type": "purple",
       "transition": "",
       "order": 0,
       "resize": true,
-      "isRoot": true,
       "pos": {
-        "x": 87,
-        "y": 115,
-        "w": 275,
-        "h": 88,
+        "x": 945,
+        "y": 76,
+        "w": 311,
+        "h": 26,
         "s": 1
       },
-      "inputs": [
-        {
-          "label": "vec4",
-          "boxID": "_20565088_",
-          "io": "input",
-          "type": "vec4",
-          "_id": "_34002443_"
-        },
-        {
-          "label": "vec4",
-          "boxID": "_20565088_",
-          "io": "input",
-          "type": "vec4",
-          "_id": "_48761071_"
-        }
-      ],
-      "outputs": [
-        {
-          "label": "vec4",
-          "boxID": "_20565088_",
-          "io": "output",
-          "type": "vec4",
-          "_id": "_87472176_"
-        },
-        {
-          "label": "vec4",
-          "boxID": "_20565088_",
-          "io": "output",
-          "type": "vec4",
-          "_id": "_38490424_"
-        }
-      ],
-      "boxColor": "insta"
+      "inputs": [],
+      "outputs": [],
+      "previewType": "node-material",
+      "boxColor": "insta",
+      "fnExt": ""
     },
     {
-      "_id": "_99107395_",
-      "title": "Default Box",
+      "_id": "_50993217_",
+      "title": "StandardNodeMaterial",
+      "NodeClass": "StandardNodeMaterial",
+      "boxColor": "blue",
+      "isMaterialNode": true,
+      "previewType": false,
       "type": "purple",
       "transition": "",
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 469,
-        "y": 111,
-        "w": 313,
-        "h": 88,
+        "x": 1032,
+        "y": 429,
+        "w": 201,
+        "h": 348,
         "s": 1
       },
       "inputs": [
         {
-          "label": "vec4",
-          "boxID": "_99107395_",
+          "label": "color",
+          "boxID": "_50993217_",
           "io": "input",
-          "type": "vec4",
-          "_id": "_1612342_"
+          "type": "vec3",
+          "_id": "_61162303_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
         },
         {
-          "label": "vec4",
-          "boxID": "_99107395_",
+          "label": "alpha",
+          "boxID": "_50993217_",
           "io": "input",
-          "type": "vec4",
-          "_id": "_79834321_"
+          "type": "float",
+          "_id": "_11782479_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "roughness",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "float",
+          "_id": "_51838899_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "metalness",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "float",
+          "_id": "_22692592_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "normal",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_57563176_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "emissive",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_51160278_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "ambient",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_1116646_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "shadow",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_76299349_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "light",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_78039694_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "ao",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "float",
+          "_id": "_41833024_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "environment",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_11967071_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "position",
+          "boxID": "_50993217_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_24664847_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "outputs": [],
+      "isNode": true
+    },
+    {
+      "_id": "_26106057_",
+      "title": "ColorNode",
+      "NodeClass": "ColorNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 88,
+        "y": 352,
+        "w": 234,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "color",
+          "boxID": "_26106057_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_68583249_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "color": "#813599"
+    },
+    {
+      "_id": "_12777151_",
+      "title": "ColorNode",
+      "NodeClass": "ColorNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 359,
+        "y": 39,
+        "w": 212,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "color",
+          "boxID": "_12777151_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_99603706_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "color": "#DCC040"
+    },
+    {
+      "_id": "_77695719_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 434,
+        "y": 719,
+        "w": 166,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "float",
+          "boxID": "_77695719_",
+          "io": "output",
+          "type": "float",
+          "_id": "_98478489_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "1"
+    },
+    {
+      "_id": "_14948435_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 440,
+        "y": 596,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "float",
+          "boxID": "_14948435_",
+          "io": "output",
+          "type": "float",
+          "_id": "_39903673_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0"
+    },
+    {
+      "_id": "_42055345_",
+      "title": "FloatMix",
+      "NodeClass": "MathNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 699,
+        "y": 584,
+        "w": 161,
+        "h": 114,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_42055345_",
+          "io": "input",
+          "type": "float",
+          "_id": "_32007140_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "b",
+          "boxID": "_42055345_",
+          "io": "input",
+          "type": "float",
+          "_id": "_16227874_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "c",
+          "boxID": "_42055345_",
+          "io": "input",
+          "type": "float",
+          "_id": "_11256745_",
+          "defaults": "0.0"
         }
       ],
       "outputs": [
         {
-          "label": "vec4",
-          "boxID": "_99107395_",
+          "label": "out",
+          "boxID": "_42055345_",
           "io": "output",
-          "type": "vec4",
-          "_id": "_19104981_"
-        },
-        {
-          "label": "vec4",
-          "boxID": "_99107395_",
-          "io": "output",
-          "type": "vec4",
-          "_id": "_3049445_"
+          "type": "float",
+          "_id": "_606456_",
+          "defaults": "0.0"
         }
       ],
-      "previewType": "node-material",
-      "boxColor": "purple"
+      "isNode": true,
+      "value": "0.44",
+      "MathModeA1": false,
+      "MathModeA2": false,
+      "MathModeA3": "MIX",
+      "ArgsSize": 3,
+      "MathMode": "MIX"
+    },
+    {
+      "_id": "_12122786_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 388,
+        "y": 439,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "float",
+          "boxID": "_12122786_",
+          "io": "output",
+          "type": "float",
+          "_id": "_75971974_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "1.59"
+    },
+    {
+      "_id": "_73502081_",
+      "title": "Vec3Mix",
+      "NodeClass": "MathNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 692,
+        "y": 328,
+        "w": 161,
+        "h": 114,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_73502081_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_16566180_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "b",
+          "boxID": "_73502081_",
+          "io": "input",
+          "type": "vec3",
+          "_id": "_16809735_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        },
+        {
+          "label": "c",
+          "boxID": "_73502081_",
+          "io": "input",
+          "type": "float",
+          "_id": "_13668634_",
+          "defaults": "0.0"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "out",
+          "boxID": "_73502081_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_58741374_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "value": "0.44",
+      "MathModeA1": false,
+      "MathModeA2": false,
+      "MathModeA3": "MIX",
+      "ArgsSize": 3,
+      "MathMode": "MIX"
+    },
+    {
+      "_id": "_74602415_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
+      "boxColor": "purple",
+      "isMaterialNode": true,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 432,
+        "y": 835,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "float",
+          "boxID": "_74602415_",
+          "io": "output",
+          "type": "float",
+          "_id": "_30777906_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.29"
     }
   ],
   "connections": [
     {
       "input": {
-        "label": "vec4",
-        "boxID": "_99107395_",
+        "label": "b",
+        "boxID": "_42055345_",
         "io": "input",
-        "type": "vec4",
-        "_id": "_79834321_"
+        "type": "float",
+        "_id": "_16227874_",
+        "defaults": "0.0"
       },
       "output": {
-        "label": "vec4",
-        "boxID": "_20565088_",
+        "label": "float",
+        "boxID": "_77695719_",
         "io": "output",
-        "type": "vec4",
-        "_id": "_87472176_"
+        "type": "float",
+        "_id": "_98478489_",
+        "defaults": "0.0"
       }
     },
     {
       "input": {
-        "label": "vec4",
-        "boxID": "_99107395_",
+        "label": "a",
+        "boxID": "_42055345_",
         "io": "input",
-        "type": "vec4",
-        "_id": "_1612342_"
+        "type": "float",
+        "_id": "_32007140_",
+        "defaults": "0.0"
       },
       "output": {
-        "label": "vec4",
-        "boxID": "_20565088_",
+        "label": "float",
+        "boxID": "_14948435_",
         "io": "output",
-        "type": "vec4",
-        "_id": "_38490424_"
+        "type": "float",
+        "_id": "_39903673_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "color",
+        "boxID": "_50993217_",
+        "io": "input",
+        "type": "vec3",
+        "_id": "_61162303_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      },
+      "output": {
+        "label": "out",
+        "boxID": "_73502081_",
+        "io": "output",
+        "type": "vec3",
+        "_id": "_58741374_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      }
+    },
+    {
+      "input": {
+        "label": "a",
+        "boxID": "_73502081_",
+        "io": "input",
+        "type": "vec3",
+        "_id": "_16566180_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      },
+      "output": {
+        "label": "color",
+        "boxID": "_12777151_",
+        "io": "output",
+        "type": "vec3",
+        "_id": "_99603706_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      }
+    },
+    {
+      "input": {
+        "label": "b",
+        "boxID": "_73502081_",
+        "io": "input",
+        "type": "vec3",
+        "_id": "_16809735_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      },
+      "output": {
+        "label": "color",
+        "boxID": "_26106057_",
+        "io": "output",
+        "type": "vec3",
+        "_id": "_68583249_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      }
+    },
+    {
+      "input": {
+        "label": "c",
+        "boxID": "_73502081_",
+        "io": "input",
+        "type": "float",
+        "_id": "_13668634_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "float",
+        "boxID": "_12122786_",
+        "io": "output",
+        "type": "float",
+        "_id": "_75971974_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "c",
+        "boxID": "_42055345_",
+        "io": "input",
+        "type": "float",
+        "_id": "_11256745_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "float",
+        "boxID": "_74602415_",
+        "io": "output",
+        "type": "float",
+        "_id": "_30777906_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "metalness",
+        "boxID": "_50993217_",
+        "io": "input",
+        "type": "float",
+        "_id": "_22692592_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "out",
+        "boxID": "_42055345_",
+        "io": "output",
+        "type": "float",
+        "_id": "_606456_",
+        "defaults": "0.0"
       }
     }
   ]

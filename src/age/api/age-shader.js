@@ -3,7 +3,18 @@ const Nodes = {
 }
 
 export const makeNodeByWin = ({ win }) => {
-  const inst = new Nodes[win.NodeClass](...(win.args || []))
+  let inst = false
+  if (win.NodeClass === 'MathNode') {
+    if (win.NodeClass === 'MathNode' && win.ArgsSize === 1) {
+      inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), Nodes.MathNode[win.MathMode]])
+    } else if (win.NodeClass === 'MathNode' && win.ArgsSize === 2) {
+      inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), new Nodes.FloatNode(0), Nodes.MathNode[win.MathMode]])
+    } else if (win.NodeClass === 'MathNode' && win.ArgsSize === 3) {
+      inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), new Nodes.FloatNode(1), new Nodes.FloatNode(0.5), Nodes.MathNode[win.MathMode]])
+    }
+  } else {
+    inst = new Nodes[win.NodeClass](...(win.args || []))
+  }
   return inst
 }
 
@@ -16,7 +27,7 @@ export const makeMat = async ({ wins, connections }) => {
   })
 
   // initialization
-  const initVals = () => {
+  const initValues = () => {
     wins.filter(e => e.NodeClass === 'ColorNode').forEach((win) => {
       if (nodes[win._id]) {
         nodes[win._id].value.setStyle(win.color)
@@ -28,20 +39,21 @@ export const makeMat = async ({ wins, connections }) => {
       }
     })
   }
-  initVals()
+  initValues()
 
   window.addEventListener('pulse', () => {
-    initVals()
+    initValues()
   })
 
   // Link Nodes
   connections.forEach((cnn) => {
     const outputNode = nodes[cnn.output.boxID]
     const inputNode = nodes[cnn.input.boxID]
+    // node property = label of window input
     inputNode[cnn.input.label] = outputNode
   })
 
-  console.log(wins, connections)
+  // console.log(wins, connections)
 
   const root = wins.find(e => e.isMaterialNode)
   if (root) {

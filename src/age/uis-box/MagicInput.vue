@@ -16,24 +16,24 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
  */
- -->
+-->
 
 <template>
-  <div class="flex justify-center items-center" v-if="ui.type === 'ui-float'">
+  <div class="bg-white flex justify-center items-center" v-if="ui.type === 'ui-float'">
     <input class="age-reset ui-input nosel" ref="input" type="number" @keydown.left="win.value -= 0.01" @keydown.right="win.value -= 0.01" step="0.01" v-model="win.value" @input="tryUpdate()" />
   </div>
-  <div class="flex-row vector-inputs" v-else-if="ui.type === 'ui-vec4'">
+  <div class="bg-white flex-row vector-inputs" v-else-if="ui.type === 'ui-vec4'">
     <input class="age-reset ui-input nosel" ref="input0" type="number" @keydown.left="win.value0 -= 0.01" @keydown.right="win.value0 -= 0.01" step="0.01" v-model="win.value0" @input="tryUpdate()" />
     <input class="age-reset ui-input nosel" ref="input1" type="number" @keydown.left="win.value1 -= 0.01" @keydown.right="win.value1 -= 0.01" step="0.01" v-model="win.value1" @input="tryUpdate()" />
     <input class="age-reset ui-input nosel" ref="input2" type="number" @keydown.left="win.value2 -= 0.01" @keydown.right="win.value2 -= 0.01" step="0.01" v-model="win.value2" @input="tryUpdate()" />
     <input class="age-reset ui-input nosel" ref="input3" type="number" @keydown.left="win.value3 -= 0.01" @keydown.right="win.value3 -= 0.01" step="0.01" v-model="win.value3" @input="tryUpdate()" />
   </div>
-  <div class="flex-row vector-inputs" v-else-if="ui.type === 'ui-vec3'">
+  <div class="bg-white flex-row vector-inputs" v-else-if="ui.type === 'ui-vec3'">
     <input class="age-reset ui-input nosel" ref="input0" type="number" @keydown.left="win.value0 -= 0.01" @keydown.right="win.value0 -= 0.01" step="0.01" v-model="win.value0" @input="tryUpdate()" />
     <input class="age-reset ui-input nosel" ref="input1" type="number" @keydown.left="win.value1 -= 0.01" @keydown.right="win.value1 -= 0.01" step="0.01" v-model="win.value1" @input="tryUpdate()" />
     <input class="age-reset ui-input nosel" ref="input2" type="number" @keydown.left="win.value2 -= 0.01" @keydown.right="win.value2 -= 0.01" step="0.01" v-model="win.value2" @input="tryUpdate()" />
   </div>
-  <div class="flex-row vector-inputs" v-else-if="ui.type === 'ui-vec2'">
+  <div class="bg-white flex-row vector-inputs" v-else-if="ui.type === 'ui-vec2'">
     <input class="age-reset ui-input nosel" ref="input0" type="number" @keydown.left="win.value0 -= 0.01" @keydown.right="win.value0 -= 0.01" step="0.01" v-model="win.value0" @input="tryUpdate()" />
     <input class="age-reset ui-input nosel" ref="input1" type="number" @keydown.left="win.value1 -= 0.01" @keydown.right="win.value1 -= 0.01" step="0.01" v-model="win.value1" @input="tryUpdate()" />
   </div>

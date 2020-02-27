@@ -1,0 +1,62 @@
+{
+  "_id": "_73502081_",
+  "title": "MixVec3Node",
+  "NodeClass": "MathNode",
+  "boxColor": "purple",
+  "isMaterialNode": true,
+  "previewType": false,
+  "type": "purple",
+  "transition": "",
+  "order": 0,
+  "resize": true,
+  "pos": {
+    "x": 450,
+    "y": 260,
+    "w": 161,
+    "h": 114,
+    "s": 1
+  },
+  "inputs": [
+    {
+      "label": "a",
+      "boxID": "_73502081_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_16566180_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "b",
+      "boxID": "_73502081_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_16809735_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "c",
+      "boxID": "_73502081_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_13668634_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    }
+  ],
+  "outputs": [
+    {
+      "label": "out",
+      "boxID": "_73502081_",
+      "io": "output",
+      "type": "vec3",
+      "_id": "_58741374_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    }
+  ],
+  "isNode": true,
+  "value": "0.44",
+  "MathModeA1": false,
+  "MathModeA2": false,
+  "MathModeA3": "MIX",
+  "ArgsSize": 3,
+  "MathMode": "MIX"
+}
