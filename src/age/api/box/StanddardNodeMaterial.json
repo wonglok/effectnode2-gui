@@ -1,0 +1,118 @@
+{
+  "_id": "_20565088_",
+  "title": "StandardNodeMaterial",
+  "NodeClass": "StandardNodeMaterial",
+  "boxColor": "blue",
+  "isMaterialNode": true,
+  "previewType": false,
+  "type": "purple",
+  "transition": "",
+  "order": 0,
+  "resize": true,
+  "pos": {
+    "x": 15,
+    "y": 15,
+    "w": 201,
+    "h": 348,
+    "s": 1
+  },
+  "inputs": [
+    {
+      "label": "color",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_34002443_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "alpha",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "float",
+      "_id": "_48761071_",
+      "defaults": "0.0"
+    },
+    {
+      "label": "roughness",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "float",
+      "_id": "_86264880_",
+      "defaults": "0.0"
+    },
+    {
+      "label": "metalness",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "float",
+      "_id": "_42764842_",
+      "defaults": "0.0"
+    },
+    {
+      "label": "normal",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_66240380_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "emissive",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_71731979_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "ambient",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_78620364_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "shadow",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_5363582_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "light",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_39135407_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "ao",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "float",
+      "_id": "_67359746_",
+      "defaults": "0.0"
+    },
+    {
+      "label": "environment",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_4701273_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    },
+    {
+      "label": "position",
+      "boxID": "_20565088_",
+      "io": "input",
+      "type": "vec3",
+      "_id": "_60906567_",
+      "defaults": "vec3(0.0, 0.0, 0.0)"
+    }
+  ],
+  "outputs": []
+}

@@ -1,0 +1,136 @@
+{
+  "wins": [
+    {
+      "_id": "_20565088_",
+      "title": "Default Box",
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "isRoot": true,
+      "pos": {
+        "x": 87,
+        "y": 115,
+        "w": 275,
+        "h": 88,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "vec4",
+          "boxID": "_20565088_",
+          "io": "input",
+          "type": "vec4",
+          "_id": "_34002443_"
+        },
+        {
+          "label": "vec4",
+          "boxID": "_20565088_",
+          "io": "input",
+          "type": "vec4",
+          "_id": "_48761071_"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "vec4",
+          "boxID": "_20565088_",
+          "io": "output",
+          "type": "vec4",
+          "_id": "_87472176_"
+        },
+        {
+          "label": "vec4",
+          "boxID": "_20565088_",
+          "io": "output",
+          "type": "vec4",
+          "_id": "_38490424_"
+        }
+      ],
+      "boxColor": "insta"
+    },
+    {
+      "_id": "_99107395_",
+      "title": "Default Box",
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 469,
+        "y": 111,
+        "w": 313,
+        "h": 88,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "vec4",
+          "boxID": "_99107395_",
+          "io": "input",
+          "type": "vec4",
+          "_id": "_1612342_"
+        },
+        {
+          "label": "vec4",
+          "boxID": "_99107395_",
+          "io": "input",
+          "type": "vec4",
+          "_id": "_79834321_"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "vec4",
+          "boxID": "_99107395_",
+          "io": "output",
+          "type": "vec4",
+          "_id": "_19104981_"
+        },
+        {
+          "label": "vec4",
+          "boxID": "_99107395_",
+          "io": "output",
+          "type": "vec4",
+          "_id": "_3049445_"
+        }
+      ],
+      "previewType": "node-material",
+      "boxColor": "purple"
+    }
+  ],
+  "connections": [
+    {
+      "input": {
+        "label": "vec4",
+        "boxID": "_99107395_",
+        "io": "input",
+        "type": "vec4",
+        "_id": "_79834321_"
+      },
+      "output": {
+        "label": "vec4",
+        "boxID": "_20565088_",
+        "io": "output",
+        "type": "vec4",
+        "_id": "_87472176_"
+      }
+    },
+    {
+      "input": {
+        "label": "vec4",
+        "boxID": "_99107395_",
+        "io": "input",
+        "type": "vec4",
+        "_id": "_1612342_"
+      },
+      "output": {
+        "label": "vec4",
+        "boxID": "_20565088_",
+        "io": "output",
+        "type": "vec4",
+        "_id": "_38490424_"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "_id": "_99107395_",
+  "title": "Preview Box",
+  "type": "purple",
+  "transition": "",
+  "order": 0,
+  "resize": true,
+  "pos": {
+    "x": 15,
+    "y": 15,
+    "w": 328,
+    "h": 26,
+    "s": 1
+  },
+  "inputs": [],
+  "outputs": [],
+  "previewType": "node-material",
+  "boxColor": "insta",
+  "fnExt": ""
+}

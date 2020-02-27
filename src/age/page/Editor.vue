@@ -1,0 +1,287 @@
+<template>
+  <div class=" relative w-full h-full"  ref="area">
+    <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
+    <div ref="DragArea" class="age-drag-area age-layer full"></div>
+    <Box @gear="onGear({ win, wins, connections })" :offset="offset" @drop="onDropConnection" @clicker="onClickConnector" class="age-layer" :connections="connections" :previewDOMs="previewDOMs" :connectorDOMs="connectorDOMs" :wins="wins" v-for="(win) in wins" :key="win._id" :win="win"></Box>
+
+    <PreviewLayer class="age-layer noclick" :wins="wins" :previewDOMs="previewDOMs" :connections="connections"></PreviewLayer>
+
+    <div class="posabs top-right">
+      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="overlay = 'add-module'">+</button>
+      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="goHome()">Home</button>
+      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="copy()">Copy</button>
+      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="onReset()">Reset</button>
+      <!-- <button class="p-3 py-2 mx-1 border bg-gray-300" @click="onRunDB()">RunDB</button> -->
+    </div>
+
+    <AddBoxMenu :offset="offset" @save="onSave()" @connections="connections = $event" @wins="wins = $event" :connections="connections" :wins="wins" class="age-layer" v-if="overlay === 'add-module'"></AddBoxMenu>
+    <EditBoxDetails @save="onSave()" :winID="currentWinID" :connections="connections" :wins="wins" class="age-layer" v-if="overlay === 'fix-module'"></EditBoxDetails>
+    <!-- <SinglePreviewLayer :running="overlay === 'fix-module'" :style="getEditPreviewStyle()" :wins="wins" :connections="connections"></SinglePreviewLayer> -->
+  </div>
+</template>
+
+<script>
+import '../assets/util.css'
+import '../assets/app.css'
+import * as AGE from '../api/age'
+// import _ from 'lodash'
+import copy from 'copy-to-clipboard'
+
+// async function postData (url = '', data = {}) {
+//   // Default options are marked with *
+//   const response = await fetch(url, {
+//     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+//     mode: 'cors', // no-cors, *cors, same-origin
+//     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+//     credentials: 'same-origin', // include, *same-origin, omit
+//     headers: {
+//       'Content-Type': 'application/json'
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     redirect: 'follow', // manual, *follow, error
+//     referrer: 'no-referrer', // no-referrer, *client
+//     body: JSON.stringify(data) // body data type must match "Content-Type" header
+//   })
+//   let res = await response.json() // parses JSON response into native JavaScript objects
+//   return res
+// }
+
+export default {
+  components: {
+    // SinglePreviewLayer: require('../uis-gl/SinglePreviewLayer.vue').default,
+    PreviewLayer: require('../uis-gl/PreviewLayer.vue').default,
+
+    EditBoxDetails: require('../uis-box/EditBoxDetails.vue').default,
+    AddBoxMenu: require('../uis-box/AddBoxMenu.vue').default,
+    ConnectionLines: require('../uis-box/ConnectionLines.vue').default,
+    Box: require('../uis-box/Box.vue').default
+  },
+  data () {
+    return {
+      overlay: false,
+      previewDOMs: [],
+      connectorDOMs: [],
+      connections: [],
+      wins: [],
+      offset: {
+        x: 0,
+        y: 0
+      }
+    }
+  },
+  mounted () {
+    this.load()
+    if (this.wins.length === 0) {
+      this.makeNew()
+    }
+
+    this.setupDrag({ dom: this.$refs.DragArea })
+    let tout = 0
+    const saver = () => {
+      clearTimeout(tout)
+      tout = setTimeout(() => {
+        this.save()
+      }, 50)
+    }
+    // window.addEventListener('save', this.trySave)
+    window.addEventListener('plot', saver)
+    window.addEventListener('refresh', saver)
+
+    window.addEventListener('save', saver)
+    window.addEventListener('save-delay', saver)
+    window.addEventListener('delay-save', saver)
+    window.addEventListener('save-age-project', () => {
+      this.save()
+    })
+    window.addEventListener('keydown', (evt) => {
+      if (evt.metaKey && evt.keyCode === 83) {
+        evt.preventDefault()
+        this.save()
+      }
+    })
+  },
+  methods: {
+    // async onRunDB () {
+    //   // let val = await postData(`http://localhost:3001`, {
+    //   //   flowTree: {
+    //   //     wins: this.wins,
+    //   //     connections: this.connections
+    //   //   },
+    //   //   data: {
+    //   //     omg: 123,
+    //   //     wa: 1234
+    //   //   }
+    //   // })
+    //   // console.log(val)
+    // },
+    getEditPreviewStyle () {
+      const show = this.overlay === 'fix-module'
+      if (show) {
+        return {
+          opacity: 1
+        }
+      } else {
+        return {
+          opacity: 0,
+          pointerEvents: 'none'
+        }
+      }
+    },
+    copy () {
+      const str = JSON.stringify({
+        wins: this.wins,
+        connections: this.connections
+      }, null, '  ')
+      copy(str)
+      window.alert('copied')
+    },
+    onReset () {
+      if (window.confirm('clear?')) {
+        window.localStorage.removeItem('AGE_EDITOR_V0')
+        const { connections, wins } = require('../code-templates/t1-demo.json')
+        this.connections = []
+        this.wins = []
+        this.$nextTick(() => {
+          this.$root.$forceUpdate()
+          window.dispatchEvent(new Event('plot'))
+          this.$nextTick(() => {
+            this.connections = connections
+            this.wins = wins
+            this.$nextTick(() => {
+              this.$root.$forceUpdate()
+              window.dispatchEvent(new Event('plot'))
+            })
+          })
+        })
+      }
+    },
+    goHome () {
+      this.offset.x = 0
+      this.offset.y = 0
+      this.$nextTick(() => {
+        this.$root.$forceUpdate()
+        window.dispatchEvent(new Event('plot'))
+      })
+    },
+    makeNew () {
+      // AGE.BOX.makeDefaultBox({ wins: this.wins })
+      // AGE.BOX.makeDefaultBox({ wins: this.wins })
+
+      // this.connections.push({
+      //   output: this.wins[0].outputs[0],
+      //   input: this.wins[1].inputs[0]
+      // })
+
+      const { connections, wins } = require('../code-templates/t1-demo.json')
+      this.connections = connections
+      this.wins = wins
+      this.$nextTick(() => {
+        this.$root.$forceUpdate()
+        window.dispatchEvent(new Event('plot'))
+      })
+    },
+    clear () {
+      if (window.confirm('clear?')) {
+        window.localStorage.removeItem('AGE_EDITOR_V0')
+        this.connections = []
+        this.wins = []
+        this.$root.$forceUpdate()
+        window.dispatchEvent(new Event('plot'))
+      }
+    },
+    onSave () {
+      this.save()
+    },
+    onGear ({ win, wins, connections }) {
+      this.currentWinID = win._id
+      this.overlay = 'fix-module'
+    },
+    // trySave: _.debounce(function () {
+    //   this.save()
+    // }, 10),
+    save () {
+      const saveDoc = {
+        connections: this.connections || [],
+        wins: this.wins || []
+      }
+      window.localStorage.setItem('AGE_EDITOR_V0', JSON.stringify(saveDoc))
+    },
+    load () {
+      let saveDoc = window.localStorage.getItem('AGE_EDITOR_V0')
+      if (saveDoc) {
+        try {
+          saveDoc = JSON.parse(saveDoc)
+          const { connections, wins } = saveDoc
+          this.connections = connections
+          this.wins = wins
+        } catch (e) {
+          console.log(e)
+          window.localStorage.removeItem('AGE_EDITOR_V0')
+        }
+      }
+    },
+    setupDrag ({ dom }) {
+      this.$refs.area.addEventListener('wheel', (evt) => {
+        if (this.overlay) {
+          return
+        }
+        evt.preventDefault()
+        this.offset.x += -evt.deltaX
+        this.offset.y += -evt.deltaY
+        this.$root.$forceUpdate()
+        this.$nextTick(() => {
+          this.$root.$forceUpdate()
+          window.dispatchEvent(new Event('plot'))
+        })
+      }, { passive: false })
+
+      AGE.UI.makeDrag({
+        dom,
+        onMM: ({ api, ev }) => {
+          this.offset.x += api.dX
+          this.offset.y += api.dY
+          this.$root.$forceUpdate()
+          this.$nextTick(() => {
+            this.$root.$forceUpdate()
+            window.dispatchEvent(new Event('plot'))
+          })
+        }
+      })
+    },
+    getStyle () {
+      return {
+        transform: `translate3d(${this.offset.x}px, ${this.offset.y}px, 0px)`
+      }
+    },
+    onDropConnection (v) {
+      const arr = [v.hand, v.land]
+      const stuff = {
+        [arr[0].io]: arr[0],
+        [arr[1].io]: arr[1]
+      }
+      this.connections.push({
+        input: stuff.input,
+        output: stuff.output
+      })
+      this.$root.$forceUpdate()
+      // console.log(JSON.stringify(this.connections, null, ' '))
+    },
+    onClickConnector (conn) {
+      let idx = -1
+      this.connections.forEach((c, idxo) => {
+        if (c.input._id === conn._id || c.output._id === conn._id) {
+          idx = idxo
+        }
+      })
+      if (idx !== -1) {
+        this.connections.splice(idx, 1)
+      }
+      // console.log(JSON.stringify(conn, null, ' '))
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
