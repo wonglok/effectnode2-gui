@@ -10,10 +10,10 @@
   "order": 0,
   "resize": true,
   "pos": {
-    "x": 348,
-    "y": 38,
-    "w": 202,
-    "h": 62,
+    "x": 450,
+    "y": 50,
+    "w": 143,
+    "h": -3,
     "s": 1
   },
   "inputs": [],
@@ -29,5 +29,5 @@
   ],
   "isNode": true,
   "value": "1.24",
-  "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/8a254874bf7f49e7863f0c3cc28efa3d.png"
+  "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/1bc5fb6d5b1546b2a0b80973152655b5.png"
 }

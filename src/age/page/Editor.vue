@@ -1,9 +1,10 @@
 <template>
   <div class=" overflow-hidden relative w-full h-full"  ref="area">
-    <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
+    <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer pointer-events-none" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
     <div ref="DragArea" class="age-drag-area age-layer full"></div>
     <Box @gear="onGear({ win, wins, connections })" :offset="offset" @drop="onDropConnection" @clicker="onClickConnector" @click="onClickBox({ win, wins })" class="age-layer" :connections="connections" :previewDOMs="previewDOMs" :connectorDOMs="connectorDOMs" :wins="wins" v-for="(win) in wins" :key="win._id" :win="win"></Box>
 
+    <!-- WebGL -->
     <PreviewLayer class="age-layer noclick" :wins="wins" :previewDOMs="previewDOMs" :connections="connections"></PreviewLayer>
 
     <div class="posabs top-right">
@@ -132,10 +133,15 @@ export default {
       }
     },
     onClickBox ({ win, wins }) {
-      console.log('on click box')
+      // console.log('on click box')
       const idx = wins.findIndex(w => w._id === win._id)
       wins.splice(idx, 1)
       wins.push(win)
+
+      this.$nextTick(() => {
+        this.$root.$forceUpdate()
+        window.dispatchEvent(new Event('plot'))
+      })
       // this.$forceUpdate()
     },
     copy () {

@@ -1,26 +1,6 @@
 {
   "wins": [
     {
-      "_id": "_99107395_",
-      "title": "Preview Box",
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 1005,
-        "y": 120,
-        "w": 237,
-        "h": 26,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [],
-      "previewType": "node-material",
-      "boxColor": "insta",
-      "fnExt": ""
-    },
-    {
       "_id": "_50993217_",
       "title": "StandardNodeMaterial",
       "NodeClass": "StandardNodeMaterial",
@@ -140,229 +120,6 @@
       "isNode": true
     },
     {
-      "_id": "_26106057_",
-      "title": "ColorNode",
-      "NodeClass": "ColorNode",
-      "boxColor": "green",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 617,
-        "y": 800,
-        "w": 203,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "color",
-          "boxID": "_26106057_",
-          "io": "output",
-          "type": "vec3",
-          "_id": "_68583249_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
-        }
-      ],
-      "isNode": true,
-      "color": "#581C30"
-    },
-    {
-      "_id": "_12777151_",
-      "title": "ColorNode",
-      "NodeClass": "ColorNode",
-      "boxColor": "green",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 64,
-        "y": 34,
-        "w": 212,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "color",
-          "boxID": "_12777151_",
-          "io": "output",
-          "type": "vec3",
-          "_id": "_99603706_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
-        }
-      ],
-      "isNode": true,
-      "color": "#24383E"
-    },
-    {
-      "_id": "_77695719_",
-      "title": "FloatNode",
-      "NodeClass": "FloatNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 362,
-        "y": 588,
-        "w": 166,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "float",
-          "boxID": "_77695719_",
-          "io": "output",
-          "type": "float",
-          "_id": "_98478489_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "1"
-    },
-    {
-      "_id": "_14948435_",
-      "title": "FloatNode",
-      "NodeClass": "FloatNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 492,
-        "y": 350,
-        "w": 200,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "float",
-          "boxID": "_14948435_",
-          "io": "output",
-          "type": "float",
-          "_id": "_39903673_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0.41",
-      "OperatorNode": false
-    },
-    {
-      "_id": "_42055345_",
-      "title": "FloatMix",
-      "NodeClass": "MathNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 627,
-        "y": 463,
-        "w": 161,
-        "h": 114,
-        "s": 1
-      },
-      "inputs": [
-        {
-          "label": "a",
-          "boxID": "_42055345_",
-          "io": "input",
-          "type": "float",
-          "_id": "_32007140_",
-          "defaults": "0.0"
-        },
-        {
-          "label": "b",
-          "boxID": "_42055345_",
-          "io": "input",
-          "type": "float",
-          "_id": "_16227874_",
-          "defaults": "0.0"
-        },
-        {
-          "label": "c",
-          "boxID": "_42055345_",
-          "io": "input",
-          "type": "float",
-          "_id": "_11256745_",
-          "defaults": "0.0"
-        }
-      ],
-      "outputs": [
-        {
-          "label": "out",
-          "boxID": "_42055345_",
-          "io": "output",
-          "type": "float",
-          "_id": "_606456_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0.44",
-      "MathModeA1": false,
-      "MathModeA2": false,
-      "MathModeA3": "MIX",
-      "ArgsSize": 3,
-      "MathMode": "MIX"
-    },
-    {
-      "_id": "_12122786_",
-      "title": "FloatNode",
-      "NodeClass": "FloatNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 366,
-        "y": 468,
-        "w": 161,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "float",
-          "boxID": "_12122786_",
-          "io": "output",
-          "type": "float",
-          "_id": "_75971974_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0"
-    },
-    {
       "_id": "_73502081_",
       "title": "Vec3Mix",
       "NodeClass": "MathNode",
@@ -374,8 +131,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 739,
-        "y": 218,
+        "x": 687,
+        "y": 211,
         "w": 161,
         "h": 114,
         "s": 1
@@ -425,7 +182,219 @@
       "MathMode": "MIX"
     },
     {
-      "_id": "_74602415_",
+      "_id": "_12777151_",
+      "title": "ColorNode",
+      "NodeClass": "ColorNode",
+      "boxColor": "green",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 391,
+        "y": 835,
+        "w": 212,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "color",
+          "boxID": "_12777151_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_99603706_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "color": "#2C423E"
+    },
+    {
+      "_id": "_4507432_",
+      "title": "TextureNode",
+      "NodeClass": "TextureNode",
+      "boxColor": "red",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 187,
+        "y": 119,
+        "w": 143,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "texture",
+          "boxID": "_4507432_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_28688588_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "value": "1.24",
+      "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/8a254874bf7f49e7863f0c3cc28efa3d.png"
+    },
+    {
+      "_id": "_99107395_",
+      "title": "Preview Box",
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 968,
+        "y": 98,
+        "w": 279,
+        "h": 26,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [],
+      "previewType": "node-material",
+      "boxColor": "insta",
+      "fnExt": ""
+    },
+    {
+      "_id": "_82410227_",
+      "title": "TextureNode",
+      "NodeClass": "TextureNode",
+      "boxColor": "red",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 355,
+        "y": 79,
+        "w": 143,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "texture",
+          "boxID": "_82410227_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_69031836_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "value": "1.24",
+      "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/1bc5fb6d5b1546b2a0b80973152655b5.png"
+    },
+    {
+      "_id": "_26106057_",
+      "title": "ColorNode",
+      "NodeClass": "ColorNode",
+      "boxColor": "green",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 642,
+        "y": 879,
+        "w": 169,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "color",
+          "boxID": "_26106057_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_68583249_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "color": "#BF457B"
+    },
+    {
+      "_id": "_42055345_",
+      "title": "FloatMixNode",
+      "NodeClass": "MathNode",
+      "boxColor": "purple",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 754,
+        "y": 492,
+        "w": 161,
+        "h": 114,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_42055345_",
+          "io": "input",
+          "type": "float",
+          "_id": "_32007140_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "b",
+          "boxID": "_42055345_",
+          "io": "input",
+          "type": "float",
+          "_id": "_16227874_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "c",
+          "boxID": "_42055345_",
+          "io": "input",
+          "type": "float",
+          "_id": "_11256745_",
+          "defaults": "0.0"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "out",
+          "boxID": "_42055345_",
+          "io": "output",
+          "type": "float",
+          "_id": "_606456_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.44",
+      "MathModeA1": false,
+      "MathModeA2": false,
+      "MathModeA3": "MIX",
+      "ArgsSize": 3,
+      "MathMode": "MIX"
+    },
+    {
+      "_id": "_77695719_",
       "title": "FloatNode",
       "NodeClass": "FloatNode",
       "boxColor": "purple",
@@ -436,8 +405,40 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 38,
-        "y": 265,
+        "x": 474,
+        "y": 535,
+        "w": 166,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "float",
+          "boxID": "_77695719_",
+          "io": "output",
+          "type": "float",
+          "_id": "_98478489_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "1.00"
+    },
+    {
+      "_id": "_12122786_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
+      "boxColor": "purple",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 472,
+        "y": 421,
         "w": 161,
         "h": 62,
         "s": 1
@@ -446,15 +447,48 @@
       "outputs": [
         {
           "label": "float",
-          "boxID": "_74602415_",
+          "boxID": "_12122786_",
           "io": "output",
           "type": "float",
-          "_id": "_30777906_",
+          "_id": "_75971974_",
           "defaults": "0.0"
         }
       ],
       "isNode": true,
-      "value": "0.29"
+      "value": "0"
+    },
+    {
+      "_id": "_14948435_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
+      "boxColor": "purple",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 360,
+        "y": 313,
+        "w": 158,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "float",
+          "boxID": "_14948435_",
+          "io": "output",
+          "type": "float",
+          "_id": "_39903673_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.29",
+      "OperatorNode": false
     },
     {
       "_id": "_21606661_",
@@ -468,8 +502,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 134,
-        "y": 693,
+        "x": 64,
+        "y": 607,
         "w": 161,
         "h": 62,
         "s": 1
@@ -489,6 +523,58 @@
       "value": "1.24"
     },
     {
+      "_id": "_99639208_",
+      "title": "FloatMulitplyNode",
+      "NodeClass": "OperatorNode",
+      "boxColor": "purple",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 476,
+        "y": 655,
+        "w": 161,
+        "h": 88,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_99639208_",
+          "io": "input",
+          "type": "float",
+          "_id": "_36068937_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "b",
+          "boxID": "_99639208_",
+          "io": "input",
+          "type": "float",
+          "_id": "_6632623_",
+          "defaults": "0.0"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "out",
+          "boxID": "_99639208_",
+          "io": "output",
+          "type": "float",
+          "_id": "_61627350_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.44",
+      "ArgsSize": 1,
+      "MathMode": false,
+      "OperatorNode": "MUL"
+    },
+    {
       "_id": "_16455870_",
       "title": "FloatSineNode",
       "NodeClass": "MathNode",
@@ -500,8 +586,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 355,
-        "y": 749,
+        "x": 263,
+        "y": 633,
         "w": 161,
         "h": 62,
         "s": 1
@@ -535,9 +621,9 @@
       "MathMode": "SIN"
     },
     {
-      "_id": "_21488056_",
-      "title": "FloatAddNode",
-      "NodeClass": "OperatorNode",
+      "_id": "_74602415_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
       "boxColor": "purple",
       "isMaterialNode": false,
       "previewType": false,
@@ -546,114 +632,25 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 604,
-        "y": 667,
+        "x": 268,
+        "y": 709,
         "w": 161,
-        "h": 88,
-        "s": 1
-      },
-      "inputs": [
-        {
-          "label": "a",
-          "boxID": "_21488056_",
-          "io": "input",
-          "type": "float",
-          "_id": "_31184338_",
-          "defaults": "0.0"
-        },
-        {
-          "label": "b",
-          "boxID": "_21488056_",
-          "io": "input",
-          "type": "float",
-          "_id": "_10700597_",
-          "defaults": "0.0"
-        }
-      ],
-      "outputs": [
-        {
-          "label": "out",
-          "boxID": "_21488056_",
-          "io": "output",
-          "type": "float",
-          "_id": "_74643585_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0.44",
-      "MathModeA1": false,
-      "MathModeA2": false,
-      "MathModeA3": "MIX",
-      "ArgsSize": 1,
-      "MathMode": "SIN",
-      "OperatorNode": "ADD"
-    },
-    {
-      "_id": "_82410227_",
-      "title": "TextureNode",
-      "NodeClass": "TextureNode",
-      "boxColor": "red",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 370,
-        "y": 21,
-        "w": 202,
         "h": 62,
         "s": 1
       },
       "inputs": [],
       "outputs": [
         {
-          "label": "texture",
-          "boxID": "_82410227_",
+          "label": "float",
+          "boxID": "_74602415_",
           "io": "output",
-          "type": "vec3",
-          "_id": "_69031836_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
+          "type": "float",
+          "_id": "_30777906_",
+          "defaults": "0.0"
         }
       ],
       "isNode": true,
-      "value": "1.24",
-      "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/1bc5fb6d5b1546b2a0b80973152655b5.png"
-    },
-    {
-      "_id": "_4507432_",
-      "title": "TextureNode",
-      "NodeClass": "TextureNode",
-      "boxColor": "red",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 333,
-        "y": 121,
-        "w": 214,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "texture",
-          "boxID": "_4507432_",
-          "io": "output",
-          "type": "vec3",
-          "_id": "_28688588_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
-        }
-      ],
-      "isNode": true,
-      "value": "1.24",
-      "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/8a254874bf7f49e7863f0c3cc28efa3d.png"
+      "value": "0.33"
     }
   ],
   "connections": [
@@ -714,24 +711,6 @@
     {
       "input": {
         "label": "a",
-        "boxID": "_73502081_",
-        "io": "input",
-        "type": "vec3",
-        "_id": "_16566180_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      },
-      "output": {
-        "label": "texture",
-        "boxID": "_82410227_",
-        "io": "output",
-        "type": "vec3",
-        "_id": "_69031836_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      }
-    },
-    {
-      "input": {
-        "label": "a",
         "boxID": "_42055345_",
         "io": "input",
         "type": "float",
@@ -767,6 +746,42 @@
     },
     {
       "input": {
+        "label": "emissive",
+        "boxID": "_50993217_",
+        "io": "input",
+        "type": "vec3",
+        "_id": "_51160278_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      },
+      "output": {
+        "label": "color",
+        "boxID": "_12777151_",
+        "io": "output",
+        "type": "vec3",
+        "_id": "_99603706_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      }
+    },
+    {
+      "input": {
+        "label": "shadow",
+        "boxID": "_50993217_",
+        "io": "input",
+        "type": "vec3",
+        "_id": "_76299349_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      },
+      "output": {
+        "label": "color",
+        "boxID": "_26106057_",
+        "io": "output",
+        "type": "vec3",
+        "_id": "_68583249_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      }
+    },
+    {
+      "input": {
         "label": "color",
         "boxID": "_50993217_",
         "io": "input",
@@ -785,20 +800,20 @@
     },
     {
       "input": {
-        "label": "c",
-        "boxID": "_42055345_",
+        "label": "a",
+        "boxID": "_73502081_",
         "io": "input",
-        "type": "float",
-        "_id": "_11256745_",
-        "defaults": "0.0"
+        "type": "vec3",
+        "_id": "_16566180_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
       },
       "output": {
-        "label": "out",
-        "boxID": "_16455870_",
+        "label": "texture",
+        "boxID": "_82410227_",
         "io": "output",
-        "type": "float",
-        "_id": "_32311773_",
-        "defaults": "0.0"
+        "type": "vec3",
+        "_id": "_69031836_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
       }
     },
     {
@@ -816,6 +831,60 @@
         "io": "output",
         "type": "float",
         "_id": "_606456_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "a",
+        "boxID": "_99639208_",
+        "io": "input",
+        "type": "float",
+        "_id": "_36068937_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "out",
+        "boxID": "_16455870_",
+        "io": "output",
+        "type": "float",
+        "_id": "_32311773_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "b",
+        "boxID": "_99639208_",
+        "io": "input",
+        "type": "float",
+        "_id": "_6632623_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "float",
+        "boxID": "_74602415_",
+        "io": "output",
+        "type": "float",
+        "_id": "_30777906_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "c",
+        "boxID": "_42055345_",
+        "io": "input",
+        "type": "float",
+        "_id": "_11256745_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "out",
+        "boxID": "_99639208_",
+        "io": "output",
+        "type": "float",
+        "_id": "_61627350_",
         "defaults": "0.0"
       }
     }
