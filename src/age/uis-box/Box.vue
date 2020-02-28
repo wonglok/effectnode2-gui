@@ -145,7 +145,8 @@ export default {
     },
     // { _id: omg, val: omg, io: 'input', type: 'sampler2D', label: 'vec4' }
     focusApp () {
-      AGE.UI.getDOM({ wins: this.wins, win: this.win })
+      this.$emit('click')
+      // AGE.UI.getDOM({ wins: this.wins, win: this.win })
     },
     getTitleStyle () {
       const types = AGE.boxColorTypes
@@ -160,6 +161,7 @@ export default {
       h += this.win.previewType ? 300 : 0
       h += this.win.NodeClass === 'ColorNode' ? 260 : 0
       h += this.win.NodeClass === 'FloatNode' ? 40 : 0
+      h += this.win.NodeClass === 'TextureNode' ? 220 : 0
       return h
     },
     getBoxLayoutStyle () {

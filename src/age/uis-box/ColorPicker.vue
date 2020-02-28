@@ -21,8 +21,8 @@ export default {
   methods: {
     onInput () {
       this.win.color = this.colors.hex
-      window.dispatchEvent(new Event('save'))
-      window.dispatchEvent(new Event('update-ui-inputs'))
+      window.dispatchEvent(new Event('save-delay'))
+      window.dispatchEvent(new Event('update-ui'))
     }
   }
 }

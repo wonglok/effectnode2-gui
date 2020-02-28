@@ -79,7 +79,7 @@ export default {
       })
     },
     tryUpdate () {
-      window.dispatchEvent(new Event('update-ui-inputs'))
+      window.dispatchEvent(new Event('update-ui'))
       window.dispatchEvent(new Event('save-delay'))
     }
     // tryUpdate: _.debounce(function () {

@@ -1,3 +1,4 @@
+import { TextureLoader } from 'three'
 const Nodes = {
   ...require('three/examples/jsm/nodes/Nodes.js')
 }
@@ -14,6 +15,9 @@ export const makeNodeByWin = ({ win }) => {
     }
   } else if (win.NodeClass === 'OperatorNode') {
     inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(1), new Nodes.FloatNode(1), Nodes.OperatorNode[win.OperatorNode]])
+  } else if (win.NodeClass === 'TextureNode') {
+    inst = new Nodes[win.NodeClass](...[new TextureLoader().load(win.src)])
+    inst.src = win.src
   } else {
     inst = new Nodes[win.NodeClass](...(win.args || []))
   }
@@ -35,15 +39,22 @@ export const makeMat = async ({ wins, connections }) => {
         nodes[win._id].value.setStyle(win.color)
       }
     })
+
     wins.filter(e => e.NodeClass === 'FloatNode').forEach((win) => {
       if (nodes[win._id]) {
         nodes[win._id].value = Number(win.value)
       }
     })
+
+    wins.filter(e => e.NodeClass === 'TextureNode').forEach((win) => {
+      if (nodes[win._id] && nodes[win._id].src !== win.src) {
+        nodes[win._id].value = new TextureLoader().load(win.src)
+      }
+    })
   }
 
   initValues()
-  window.addEventListener('update-ui-inputs', () => {
+  window.addEventListener('update-ui', () => {
     initValues()
   })
 

@@ -50,10 +50,11 @@ limitations under the License.
           <Connector @drop="$emit('drop', $event)" @clicker="$emit('clicker', $event)" :connectorDOMs="connectorDOMs" :connections="connections" class="age-output" :key="output._id" v-for="output in $parent.win.outputs" :userdata="output"></Connector>
         </div>
       </div>
-      <ColorPicker v-if="win.NodeClass === 'ColorNode'" :win="win"></ColorPicker>
-      <MagicInput :ui="{ type: 'ui-float' }" v-if="win.NodeClass === 'FloatNode'" :win="win"></MagicInput>
-      <div class="full" v-if="win.previewType">
-        <PreviewRect :win="win" :previewDOMs="previewDOMs"></PreviewRect>
+      <div class="full">
+        <ImageLink class="" v-if="win.NodeClass === 'TextureNode'" :win="win"></ImageLink>
+        <ColorPicker class="full" v-if="win.NodeClass === 'ColorNode'" :win="win"></ColorPicker>
+        <MagicInput class="" :ui="{ type: 'ui-float' }" v-if="win.NodeClass === 'FloatNode'" :win="win"></MagicInput>
+        <PreviewRect v-if="win.previewType" :win="win" :previewDOMs="previewDOMs"></PreviewRect>
       </div>
     </div>
 
@@ -72,6 +73,7 @@ export default {
   components: {
     // AudioLoader: require('./AudioLoader.vue').default,
     // TextureLoader: require('./TextureLoader.vue').default,
+    ImageLink: require('./ImageLink.vue').default,
     MagicInput: require('./MagicInput.vue').default,
     PreviewRect: require('./PreviewRect.vue').default,
     ColorPicker: require('./ColorPicker.vue').default,

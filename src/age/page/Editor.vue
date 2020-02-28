@@ -2,7 +2,7 @@
   <div class=" overflow-hidden relative w-full h-full"  ref="area">
     <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
     <div ref="DragArea" class="age-drag-area age-layer full"></div>
-    <Box @gear="onGear({ win, wins, connections })" :offset="offset" @drop="onDropConnection" @clicker="onClickConnector" class="age-layer" :connections="connections" :previewDOMs="previewDOMs" :connectorDOMs="connectorDOMs" :wins="wins" v-for="(win) in wins" :key="win._id" :win="win"></Box>
+    <Box @gear="onGear({ win, wins, connections })" :offset="offset" @drop="onDropConnection" @clicker="onClickConnector" @click="onClickBox({ win, wins })" class="age-layer" :connections="connections" :previewDOMs="previewDOMs" :connectorDOMs="connectorDOMs" :wins="wins" v-for="(win) in wins" :key="win._id" :win="win"></Box>
 
     <PreviewLayer class="age-layer noclick" :wins="wins" :previewDOMs="previewDOMs" :connections="connections"></PreviewLayer>
 
@@ -15,7 +15,9 @@
     </div>
 
     <AddBoxMenu :offset="offset" @save="onSave()" @connections="connections = $event" @wins="wins = $event" :connections="connections" :wins="wins" class="age-layer" v-if="overlay === 'add-module'"></AddBoxMenu>
+
     <EditBoxDetails @save="onSave()" :winID="currentWinID" :connections="connections" :wins="wins" class="age-layer" v-if="overlay === 'fix-module'"></EditBoxDetails>
+
     <!-- <SinglePreviewLayer :running="overlay === 'fix-module'" :style="getEditPreviewStyle()" :wins="wins" :connections="connections"></SinglePreviewLayer> -->
   </div>
 </template>
@@ -89,10 +91,12 @@ export default {
 
     window.addEventListener('save', saver)
     window.addEventListener('save-delay', saver)
+    // window.addEventListener('save-age-project', () => {
+    //   this.save()
+    // })
+
     window.addEventListener('delay-save', saver)
-    window.addEventListener('save-age-project', () => {
-      this.save()
-    })
+
     window.addEventListener('keydown', (evt) => {
       if (evt.metaKey && evt.keyCode === 83) {
         evt.preventDefault()
@@ -126,6 +130,13 @@ export default {
           pointerEvents: 'none'
         }
       }
+    },
+    onClickBox ({ win, wins }) {
+      console.log('on click box')
+      const idx = wins.findIndex(w => w._id === win._id)
+      wins.splice(idx, 1)
+      wins.push(win)
+      // this.$forceUpdate()
     },
     copy () {
       const str = JSON.stringify({
