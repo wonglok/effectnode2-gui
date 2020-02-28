@@ -7,13 +7,7 @@
     <!-- WebGL -->
     <PreviewLayer class="age-layer noclick" :wins="wins" :previewDOMs="previewDOMs" :connections="connections"></PreviewLayer>
 
-    <div class="posabs top-right">
-      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="overlay = 'add-module'">+</button>
-      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="goHome()">Home</button>
-      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="copy()">Copy</button>
-      <button class="p-3 py-2 mx-1 border bg-gray-300" @click="onReset()">Reset</button>
-      <!-- <button class="p-3 py-2 mx-1 border bg-gray-300" @click="onRunDB()">RunDB</button> -->
-    </div>
+    <ToolBox></ToolBox>
 
     <AddBoxMenu :offset="offset" @save="onSave()" @connections="connections = $event" @wins="wins = $event" :connections="connections" :wins="wins" class="age-layer" v-if="overlay === 'add-module'"></AddBoxMenu>
 
@@ -27,8 +21,8 @@
 import '../assets/util.css'
 import '../assets/app.css'
 import * as AGE from '../api/age'
-// import _ from 'lodash'
 import copy from 'copy-to-clipboard'
+// import _ from 'lodash'
 
 // async function postData (url = '', data = {}) {
 //   // Default options are marked with *
@@ -52,6 +46,7 @@ import copy from 'copy-to-clipboard'
 export default {
   components: {
     // SinglePreviewLayer: require('../uis-gl/SinglePreviewLayer.vue').default,
+    ToolBox: require('../uis-box/ToolBox.vue').default,
     PreviewLayer: require('../uis-gl/PreviewLayer.vue').default,
 
     EditBoxDetails: require('../uis-box/EditBoxDetails.vue').default,
@@ -61,6 +56,7 @@ export default {
   },
   data () {
     return {
+      STORAGE_NS: 'AGE_EDITOR_V0',
       overlay: false,
       previewDOMs: [],
       connectorDOMs: [],
@@ -137,12 +133,6 @@ export default {
       const idx = wins.findIndex(w => w._id === win._id)
       wins.splice(idx, 1)
       wins.push(win)
-
-      this.$nextTick(() => {
-        this.$root.$forceUpdate()
-        window.dispatchEvent(new Event('plot'))
-      })
-      // this.$forceUpdate()
     },
     copy () {
       const str = JSON.stringify({
@@ -154,7 +144,7 @@ export default {
     },
     onReset () {
       if (window.confirm('clear?')) {
-        window.localStorage.removeItem('AGE_EDITOR_V0')
+        window.localStorage.removeItem(this.STORAGE_NS)
         const { connections, wins } = require('../code-templates/t1-demo.json')
         this.connections = []
         this.wins = []
@@ -199,7 +189,7 @@ export default {
     },
     clear () {
       if (window.confirm('clear?')) {
-        window.localStorage.removeItem('AGE_EDITOR_V0')
+        window.localStorage.removeItem(this.STORAGE_NS)
         this.connections = []
         this.wins = []
         this.$root.$forceUpdate()
@@ -221,10 +211,10 @@ export default {
         connections: this.connections || [],
         wins: this.wins || []
       }
-      window.localStorage.setItem('AGE_EDITOR_V0', JSON.stringify(saveDoc))
+      window.localStorage.setItem(this.STORAGE_NS, JSON.stringify(saveDoc))
     },
     load () {
-      let saveDoc = window.localStorage.getItem('AGE_EDITOR_V0')
+      let saveDoc = window.localStorage.getItem(this.STORAGE_NS)
       if (saveDoc) {
         try {
           saveDoc = JSON.parse(saveDoc)
@@ -233,7 +223,7 @@ export default {
           this.wins = wins
         } catch (e) {
           console.log(e)
-          window.localStorage.removeItem('AGE_EDITOR_V0')
+          window.localStorage.removeItem(this.STORAGE_NS)
         }
       }
     },

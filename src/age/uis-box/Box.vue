@@ -159,7 +159,7 @@ export default {
     getHeight () {
       let h = 0
       h += this.win.previewType ? 300 : 0
-      h += this.win.NodeClass === 'ColorNode' ? 170 : 0
+      h += this.win.NodeClass === 'ColorNode' ? 215 : 0
       h += this.win.NodeClass === 'FloatNode' ? 40 : 0
       h += this.win.NodeClass === 'TextureNode' ? 170 : 0
       return h
