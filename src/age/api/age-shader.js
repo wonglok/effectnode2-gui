@@ -8,10 +8,12 @@ export const makeNodeByWin = ({ win }) => {
     if (win.ArgsSize === 1) {
       inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), Nodes.MathNode[win.MathMode]])
     } else if (win.ArgsSize === 2) {
-      inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), new Nodes.FloatNode(0), Nodes.MathNode[win.MathMode]])
+      inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(1), new Nodes.FloatNode(1), Nodes.MathNode[win.MathMode]])
     } else if (win.ArgsSize === 3) {
-      inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(0), new Nodes.FloatNode(1), new Nodes.FloatNode(0.5), Nodes.MathNode[win.MathMode]])
+      inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(1), new Nodes.FloatNode(1), new Nodes.FloatNode(1), Nodes.MathNode[win.MathMode]])
     }
+  } else if (win.NodeClass === 'OperatorNode') {
+    inst = new Nodes[win.NodeClass](...[new Nodes.FloatNode(1), new Nodes.FloatNode(1), Nodes.OperatorNode[win.OperatorNode]])
   } else {
     inst = new Nodes[win.NodeClass](...(win.args || []))
   }

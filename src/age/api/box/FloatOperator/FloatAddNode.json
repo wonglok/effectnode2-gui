@@ -1,7 +1,7 @@
 {
-  "_id": "_42055345_",
-  "title": "FloatMixNode",
-  "NodeClass": "MathNode",
+  "_id": "_21488056_",
+  "title": "FloatAddNode",
+  "NodeClass": "OperatorNode",
   "boxColor": "purple",
   "isMaterialNode": false,
   "previewType": false,
@@ -10,53 +10,43 @@
   "order": 0,
   "resize": true,
   "pos": {
-    "x": 401,
-    "y": 425,
+    "x": 816,
+    "y": 711,
     "w": 161,
-    "h": 114,
+    "h": 88,
     "s": 1
   },
   "inputs": [
     {
       "label": "a",
-      "boxID": "_42055345_",
+      "boxID": "_21488056_",
       "io": "input",
       "type": "float",
-      "_id": "_32007140_",
+      "_id": "_31184338_",
       "defaults": "0.0"
     },
     {
       "label": "b",
-      "boxID": "_42055345_",
+      "boxID": "_21488056_",
       "io": "input",
       "type": "float",
-      "_id": "_16227874_",
-      "defaults": "0.0"
-    },
-    {
-      "label": "c",
-      "boxID": "_42055345_",
-      "io": "input",
-      "type": "float",
-      "_id": "_11256745_",
+      "_id": "_10700597_",
       "defaults": "0.0"
     }
   ],
   "outputs": [
     {
       "label": "out",
-      "boxID": "_42055345_",
+      "boxID": "_21488056_",
       "io": "output",
       "type": "float",
-      "_id": "_606456_",
+      "_id": "_74643585_",
       "defaults": "0.0"
     }
   ],
   "isNode": true,
   "value": "0.44",
-  "MathModeA1": false,
-  "MathModeA2": false,
-  "MathModeA3": "MIX",
-  "ArgsSize": 3,
-  "MathMode": "MIX"
+  "ArgsSize": 1,
+  "MathMode": false,
+  "OperatorNode": "ADD"
 }

@@ -23,20 +23,17 @@ limitations under the License.
     <div class="age-addbox-close-plane full" @click="close()">
     </div>
     <div class="age-addbox-content scroller">
-      <h1>
+      <!-- <h1>
         Reset / Examples
-      </h1>
-      <div class="age-addbox-row">
+      </h1> -->
+      <!-- <div class="age-addbox-row">
         <div class="age-addbox-menu-item">
           <p>
             <strong>Examples (Basic)</strong>
           </p>
           <button @click="addJSONTemplate('../code-templates/t1-demo.json')">Demo</button>
         </div>
-      </div>
-      <h1>
-        Logic Modules
-      </h1>
+      </div> -->
       <!-- <div class="age-addbox-row">
         <div class="age-addbox-menu-item">
           <p>
@@ -45,7 +42,8 @@ limitations under the License.
           <button @click="adder('makeDefaultBox')">Default Box</button>
         </div>
       </div> -->
-      <div>
+      <div :key="group" v-for="(list, group) in market">
+        <h2 class=" font-title text-xl">{{ group }}</h2>
         <div :key="item.key" v-for="(item) in list" class=" cursor-pointer p-2 m-2 inline-block bg-gray-400" @click="clone(item.value)">
           {{ item.key }}
         </div>
@@ -68,14 +66,21 @@ export default {
   },
   data () {
     return {
-      list: Object.keys(AGE.Market).map(kn => {
-        return {
-          key: kn,
-          value: AGE.Market[kn]
-        }
-      }).sort((a, b) => {
-        return a.key - b.key
-      })
+      market: AGE.Market
+      // gorup -> items
+      // list: Object.keys(AGE.Market).reduce((ac, gpKN, idx) => {
+      //   const group = AGE.Market[gpKN]
+      //   const items = group.map(kn => {
+      //     return {
+      //       key: kn,
+      //       value: AGE.Market[kn]
+      //     }
+      //   }).sort((a, b) => {
+      //     return a.key - b.key
+      //   })
+
+      //   return ac
+      // }, [])
     }
   },
   mounted () {

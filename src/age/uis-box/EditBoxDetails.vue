@@ -46,22 +46,12 @@ limitations under the License.
         Node Class
         <input class="border border-gray-200 p-2 m-1" type="text" v-model="win.NodeClass"  />
       </p>
-      <!-- <p>
-        MathNode Data Size
-        <select v-model="win.DataSize">
-          <option :value="1">Float</option>
-          <option :value="2">Vec2</option>
-          <option :value="3">Vec3</option>
-          <option :value="4">Vec4</option>
-        </select>
-      </p> -->
 
       <p>
-        MathNode Args Size
-        <select v-model="win.ArgsSize" disabled>
-          <option :value="1">1</option>
-          <option :value="2">2</option>
-          <option :value="3">3</option>
+        OperatorNode
+        <select v-model="win.OperatorNode">
+          <option :value="false">None</option>
+          <option :key="key" v-for="(val, key) in OperatorNode" :value="key">{{ key }}</option>
         </select>
       </p>
 
@@ -78,6 +68,15 @@ limitations under the License.
           <optgroup label="Arg Size 3">
             <option :key="key" v-for="(val, key) in MathNode.A3" :value="key">{{ key }}</option>
           </optgroup>
+        </select>
+      </p>
+
+      <p>
+        MathNode Args Size
+        <select v-model="win.ArgsSize" disabled>
+          <option :value="1">1</option>
+          <option :value="2">2</option>
+          <option :value="3">3</option>
         </select>
       </p>
 
@@ -163,7 +162,7 @@ limitations under the License.
         <!-- <textarea v-model="win.fnInner" cols="30" rows="10" @input="compile"></textarea> -->
         <!--  -->
 
-        <p>
+        <!-- <p>
           Library
         </p>
         <Brace style="height: 200px;" :mode="'glsl'" :getter="() => win.fnExt" :setter="(v) => { win.fnExt = v }"></Brace>
@@ -173,7 +172,7 @@ limitations under the License.
 
         <Brace style="height: 200px;" :mode="'glsl'" :getter="() => win.fnInner" :setter="(v) => { win.fnInner = v }"></Brace>
 
-        <pre>{{ win }}</pre>
+        <pre>{{ win }}</pre> -->
       </div>
       <button @click="removeWin({ win })">Remove This</button>
       <div>
@@ -196,8 +195,8 @@ import copy from 'copy-to-clipboard'
 
 export default {
   components: {
-    VJsoneditor,
-    Brace: require('./Brace.vue').default
+    VJsoneditor //,
+    // Brace: require('./Brace.vue').default
   },
   props: {
     winID: {},
@@ -207,6 +206,7 @@ export default {
   data () {
     return {
       MathNode: AGE.MathNode,
+      OperatorNode: AGE.OperatorNode,
       colorTypes: AGE.boxColorTypes,
       opts: {
         mode: 'code',
@@ -339,15 +339,17 @@ export default {
       this.$root.$forceUpdate()
     },
     removeWin ({ win }) {
-      this.remove({ win })
+      if (window.confirm('delete?')) {
+        this.remove({ win })
 
-      if (this.win.alsoRemove) {
-        const anotherWinID = this.win.alsoRemove
-        const anotherWin = this.wins.find(w => w._id === anotherWinID)
-        this.remove({ win: anotherWin })
+        if (this.win.alsoRemove) {
+          const anotherWinID = this.win.alsoRemove
+          const anotherWin = this.wins.find(w => w._id === anotherWinID)
+          this.remove({ win: anotherWin })
+        }
+
+        this.close()
       }
-
-      this.close()
     }
   }
 }

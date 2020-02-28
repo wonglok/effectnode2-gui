@@ -1,5 +1,5 @@
 <template>
-  <div class=" relative w-full h-full"  ref="area">
+  <div class=" overflow-hidden relative w-full h-full"  ref="area">
     <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
     <div ref="DragArea" class="age-drag-area age-layer full"></div>
     <Box @gear="onGear({ win, wins, connections })" :offset="offset" @drop="onDropConnection" @clicker="onClickConnector" class="age-layer" :connections="connections" :previewDOMs="previewDOMs" :connectorDOMs="connectorDOMs" :wins="wins" v-for="(win) in wins" :key="win._id" :win="win"></Box>
@@ -81,7 +81,7 @@ export default {
       clearTimeout(tout)
       tout = setTimeout(() => {
         this.save()
-      }, 50)
+      }, 30)
     }
     // window.addEventListener('save', this.trySave)
     window.addEventListener('plot', saver)

@@ -8,10 +8,10 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 986,
-        "y": 79,
-        "w": 267,
-        "h": 26,
+        "x": 980,
+        "y": 73,
+        "w": 280,
+        "h": -47,
         "s": 1
       },
       "inputs": [],
@@ -32,8 +32,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 995,
-        "y": 427,
+        "x": 1035,
+        "y": 432,
         "w": 201,
         "h": 348,
         "s": 1
@@ -183,8 +183,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 357,
-        "y": 15,
+        "x": 356,
+        "y": 19,
         "w": 212,
         "h": 62,
         "s": 1
@@ -247,8 +247,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 671,
-        "y": 583,
+        "x": 399,
+        "y": 848,
         "w": 161,
         "h": 62,
         "s": 1
@@ -265,7 +265,8 @@
         }
       ],
       "isNode": true,
-      "value": "0.52"
+      "value": "0.52",
+      "OperatorNode": false
     },
     {
       "_id": "_42055345_",
@@ -279,8 +280,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 670,
-        "y": 455,
+        "x": 627,
+        "y": 463,
         "w": 161,
         "h": 114,
         "s": 1
@@ -373,8 +374,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 646,
-        "y": 309,
+        "x": 615,
+        "y": 319,
         "w": 161,
         "h": 114,
         "s": 1
@@ -532,6 +533,61 @@
       "MathModeA3": "MIX",
       "ArgsSize": 1,
       "MathMode": "SIN"
+    },
+    {
+      "_id": "_21488056_",
+      "title": "FloatAddNode",
+      "NodeClass": "OperatorNode",
+      "boxColor": "purple",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 644,
+        "y": 605,
+        "w": 161,
+        "h": 88,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_21488056_",
+          "io": "input",
+          "type": "float",
+          "_id": "_31184338_",
+          "defaults": "0.0"
+        },
+        {
+          "label": "b",
+          "boxID": "_21488056_",
+          "io": "input",
+          "type": "float",
+          "_id": "_10700597_",
+          "defaults": "0.0"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "out",
+          "boxID": "_21488056_",
+          "io": "output",
+          "type": "float",
+          "_id": "_74643585_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.44",
+      "MathModeA1": false,
+      "MathModeA2": false,
+      "MathModeA3": "MIX",
+      "ArgsSize": 1,
+      "MathMode": "SIN",
+      "OperatorNode": "ADD"
     }
   ],
   "connections": [
@@ -551,42 +607,6 @@
         "type": "float",
         "_id": "_98478489_",
         "defaults": "0.0"
-      }
-    },
-    {
-      "input": {
-        "label": "a",
-        "boxID": "_73502081_",
-        "io": "input",
-        "type": "vec3",
-        "_id": "_16566180_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      },
-      "output": {
-        "label": "color",
-        "boxID": "_12777151_",
-        "io": "output",
-        "type": "vec3",
-        "_id": "_99603706_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      }
-    },
-    {
-      "input": {
-        "label": "b",
-        "boxID": "_73502081_",
-        "io": "input",
-        "type": "vec3",
-        "_id": "_16809735_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      },
-      "output": {
-        "label": "color",
-        "boxID": "_26106057_",
-        "io": "output",
-        "type": "vec3",
-        "_id": "_68583249_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
       }
     },
     {
@@ -681,38 +701,38 @@
     },
     {
       "input": {
-        "label": "roughness",
-        "boxID": "_50993217_",
+        "label": "a",
+        "boxID": "_73502081_",
         "io": "input",
-        "type": "float",
-        "_id": "_51838899_",
-        "defaults": "0.0"
+        "type": "vec3",
+        "_id": "_16566180_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
       },
       "output": {
-        "label": "out",
-        "boxID": "_42055345_",
+        "label": "color",
+        "boxID": "_12777151_",
         "io": "output",
-        "type": "float",
-        "_id": "_606456_",
-        "defaults": "0.0"
+        "type": "vec3",
+        "_id": "_99603706_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
       }
     },
     {
       "input": {
-        "label": "metalness",
-        "boxID": "_50993217_",
+        "label": "b",
+        "boxID": "_73502081_",
         "io": "input",
-        "type": "float",
-        "_id": "_22692592_",
-        "defaults": "0.0"
+        "type": "vec3",
+        "_id": "_16809735_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
       },
       "output": {
-        "label": "float",
-        "boxID": "_14948435_",
+        "label": "color",
+        "boxID": "_26106057_",
         "io": "output",
-        "type": "float",
-        "_id": "_39903673_",
-        "defaults": "0.0"
+        "type": "vec3",
+        "_id": "_68583249_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
       }
     }
   ]

@@ -21,6 +21,13 @@ export const BOX = require('./age-box.js')
 export const VFX = require('./age-shader.js')
 export const Market = require('./age-box-market.js')
 
+export const OperatorNode = {
+  ADD: true,
+  SUB: true,
+  MUL: true,
+  DIV: true
+}
+
 const A1 = {}
 const A2 = {}
 const A3 = {}
@@ -31,48 +38,48 @@ export const MathNode = {
 }
 
 // 1 input
-A1.RAD = 'radians'
-A1.DEG = 'degrees'
-A1.EXP = 'exp'
-A1.EXP2 = 'exp2'
-A1.LOG = 'log'
-A1.LOG2 = 'log2'
-A1.SQRT = 'sqrt'
-A1.INV_SQRT = 'inversesqrt'
-A1.FLOOR = 'floor'
-A1.CEIL = 'ceil'
-A1.NORMALIZE = 'normalize'
-A1.FRACT = 'fract'
-A1.SATURATE = 'saturate'
-A1.SIN = 'sin'
-A1.COS = 'cos'
-A1.TAN = 'tan'
-A1.ASIN = 'asin'
-A1.ACOS = 'acos'
-A1.ARCTAN = 'atan'
-A1.ABS = 'abs'
-A1.SIGN = 'sign'
-A1.LENGTH = 'length'
-A1.NEGATE = 'negate'
-A1.INVERT = 'invert'
+A1.RAD = true
+A1.DEG = true
+A1.EXP = true
+A1.EXP2 = true
+A1.LOG = true
+A1.LOG2 = true
+A1.SQRT = true
+A1.INV_SQRT = true
+A1.FLOOR = true
+A1.CEIL = true
+A1.NORMALIZE = true
+A1.FRACT = true
+A1.SATURATE = true
+A1.SIN = true
+A1.COS = true
+A1.TAN = true
+A1.ASIN = true
+A1.ACOS = true
+A1.ARCTAN = true
+A1.ABS = true
+A1.SIGN = true
+A1.LENGTH = true
+A1.NEGATE = true
+A1.INVERT = true
 
 // 2 inputs
-A2.MIN = 'min'
-A2.MAX = 'max'
-A2.MOD = 'mod'
-A2.STEP = 'step'
-A2.REFLECT = 'reflect'
-A2.DISTANCE = 'distance'
-A2.DOT = 'dot'
-A2.CROSS = 'cross'
-A2.POW = 'pow'
+A2.MIN = true
+A2.MAX = true
+A2.MOD = true
+A2.STEP = true
+A2.REFLECT = true
+A2.DISTANCE = true
+A2.DOT = true
+A2.CROSS = true
+A2.POW = true
 
 // 3 inputs
-A3.MIX = 'mix'
-A3.CLAMP = 'clamp'
-A3.REFRACT = 'refract'
-A3.SMOOTHSTEP = 'smoothstep'
-A3.FACEFORWARD = 'faceforward'
+A3.MIX = true
+A3.CLAMP = true
+A3.REFRACT = true
+A3.SMOOTHSTEP = true
+A3.FACEFORWARD = true
 
 /*
 ----------------------------------

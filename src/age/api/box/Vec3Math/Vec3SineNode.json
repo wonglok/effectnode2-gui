@@ -21,7 +21,7 @@
       "label": "a",
       "boxID": "_16455870_",
       "io": "input",
-      "type": "float",
+      "type": "vec3",
       "_id": "_47316486_",
       "defaults": "0.0"
     }
@@ -31,16 +31,13 @@
       "label": "out",
       "boxID": "_16455870_",
       "io": "output",
-      "type": "float",
+      "type": "vec3",
       "_id": "_32311773_",
       "defaults": "0.0"
     }
   ],
   "isNode": true,
   "value": "0.44",
-  "MathModeA1": false,
-  "MathModeA2": false,
-  "MathModeA3": "MIX",
   "ArgsSize": 1,
   "MathMode": "SIN"
 }

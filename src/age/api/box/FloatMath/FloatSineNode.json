@@ -1,0 +1,43 @@
+{
+  "_id": "_16455870_",
+  "title": "FloatSineNode",
+  "NodeClass": "MathNode",
+  "boxColor": "purple",
+  "isMaterialNode": false,
+  "previewType": false,
+  "type": "purple",
+  "transition": "",
+  "order": 0,
+  "resize": true,
+  "pos": {
+    "x": 375,
+    "y": 417,
+    "w": 161,
+    "h": 62,
+    "s": 1
+  },
+  "inputs": [
+    {
+      "label": "a",
+      "boxID": "_16455870_",
+      "io": "input",
+      "type": "float",
+      "_id": "_47316486_",
+      "defaults": "0.0"
+    }
+  ],
+  "outputs": [
+    {
+      "label": "out",
+      "boxID": "_16455870_",
+      "io": "output",
+      "type": "float",
+      "_id": "_32311773_",
+      "defaults": "0.0"
+    }
+  ],
+  "isNode": true,
+  "value": "0.44",
+  "ArgsSize": 1,
+  "MathMode": "SIN"
+}
