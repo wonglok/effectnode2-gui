@@ -29,9 +29,13 @@ limitations under the License.
       <h2 @click="copyModuleToClipBoard()">
         Copy Module to Clipboard
       </h2>
-      <h2 @click="cloneModule()">
-        Clone Module
+      <h2 @click="duplicateBox()">
+        Duplicate Box
       </h2>
+      <p>
+        Is Pinned
+        <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.pinned"  />
+      </p>
 
       <p>
         Is Material Node
@@ -254,8 +258,8 @@ export default {
       }
       window.dispatchEvent(new Event('compile-shader'))
     },
-    cloneModule () {
-      const mod = AGE.BOX.cloneModule(this.win)
+    duplicateBox () {
+      const mod = AGE.BOX.duplicateBox(this.win)
       this.wins.push(mod)
       this.close()
     },

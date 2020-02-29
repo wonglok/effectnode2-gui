@@ -27,6 +27,7 @@ export default {
   },
   data () {
     return {
+      active: true,
       material: false,
       config: {},
       shader: false,
@@ -60,6 +61,7 @@ export default {
     // }
   },
   beforeDestroy  () {
+    this.active = false
     delete this.scenes[this.preview.domID]
     for (var kn in this.rAFID) {
       cancelAnimationFrame(this.rAFID[kn] || 0)
@@ -133,6 +135,9 @@ export default {
 
     this.makeMat({ old: false })
     window.addEventListener('compile-shader', () => {
+      if (!this.active) {
+        return
+      }
       this.makeMat({ old: this.material })
     }, false)
     const mesh = this.mesh = new THREE.Mesh(geometry, undefined)
@@ -144,6 +149,9 @@ export default {
     // scene.add(light)
 
     window.addEventListener('resize', () => {
+      if (!this.active) {
+        return
+      }
       const size = dom.getBoundingClientRect()
       camera.aspect = size.width / size.height
       camera.updateProjectionMatrix()
@@ -151,6 +159,9 @@ export default {
     scene.background = new THREE.Color('rgb(192,223,255)')
 
     this.group.render = ({ renderer }) => {
+      if (!this.active) {
+        return
+      }
       const delta = clock.getDelta()
       frame.setRenderer(renderer).update(delta)
 

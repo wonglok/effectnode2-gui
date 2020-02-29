@@ -165,6 +165,13 @@ export default {
       return h
     },
     getBoxLayoutStyle () {
+      const transform = () => {
+        if (this.win.pinned) {
+          return `translate3d(${this.win.pos.x}px, ${this.win.pos.y}px, 1px)`
+        } else {
+          return `translate3d(${this.offset.x + this.win.pos.x}px, ${this.offset.y + this.win.pos.y}px, 1px)`
+        }
+      }
       return {
         position: 'absolute',
         top: '0px',
@@ -173,7 +180,7 @@ export default {
         height: `${this.win.pos.h + (this.getHeight())}px`,
         minHeight: `calc(${26}px)`,
         minWidth: `calc(${100}px)`,
-        transform: `translate3d(${this.offset.x + this.win.pos.x}px, ${this.offset.y + this.win.pos.y}px, 1px)`
+        transform: transform()
       }
     },
     setupSubCompo ({ subCompo }) {
