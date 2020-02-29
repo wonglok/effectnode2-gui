@@ -3,6 +3,10 @@ const Nodes = {
   ...require('three/examples/jsm/nodes/Nodes.js')
 }
 
+export const makeScene = () => {
+
+}
+
 export const makeNodeByWin = ({ win }) => {
   let inst = false
   if (win.NodeClass === 'MathNode') {

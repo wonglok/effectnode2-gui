@@ -1,6 +1,5 @@
 <template>
   <div class=" overflow-hidden relative w-full h-full"  ref="area">
-    <FloatedPreviewBox :running="true" :style="getEditPreviewStyle()" :wins="wins" :connections="connections"></FloatedPreviewBox>
 
     <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer pointer-events-none" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
     <div ref="DragArea" class="age-drag-area age-layer full"></div>
@@ -46,7 +45,6 @@ import copy from 'copy-to-clipboard'
 
 export default {
   components: {
-    FloatedPreviewBox: require('../uis-gl/FloatedPreviewBox.vue').default,
     ToolBox: require('../uis-box/ToolBox.vue').default,
     PreviewLayer: require('../uis-gl/PreviewLayer.vue').default,
 
