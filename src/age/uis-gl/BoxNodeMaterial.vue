@@ -5,7 +5,7 @@
 
 <script>
 import * as AGE from '../api/age'
-import _ from 'lodash'
+// import _ from 'lodash'
 // import * as Audio from '../media/mic-history.js'
 
 const THREE = {
@@ -39,12 +39,12 @@ export default {
     }
   },
   watch: {
-    uniformsStr: {
-      deep: true,
-      handler: _.debounce(function () {
-        this.makeMat({ old: this.material })
-      }, 100)
-    },
+    // uniformsStr: {
+    //   deep: true,
+    //   handler: _.debounce(function () {
+    //     this.makeMat({ old: this.material })
+    //   }, 100)
+    // },
     connections: {
       deep: true,
       handler () {
@@ -53,11 +53,11 @@ export default {
     }
   },
   computed: {
-    uniformsStr () {
-      return JSON.stringify({
-        uni: (this.win.uniforms || []).filter(e => e.uniType === 'sampler2D')
-      })
-    }
+    // uniformsStr () {
+    //   return JSON.stringify({
+    //     uni: (this.win.uniforms || []).filter(e => e.uniType === 'sampler2D')
+    //   })
+    // }
   },
   beforeDestroy  () {
     delete this.scenes[this.preview.domID]
@@ -94,6 +94,7 @@ export default {
 
     const dom = await AGE.UI.getDOM({ domID: this.preview.domID })
     const rect = dom.getBoundingClientRect()
+
     const scene = this.group.scene = new THREE.Scene()
     const fov = 75
     const aspect = rect.width / rect.height
@@ -123,6 +124,8 @@ export default {
     controls.maxDistance = 16
     controls.enablePan = false
     controls.enableZoom = false
+    controls.enableDamping = true
+    controls.enableKeys = false
 
     // console.log(this.connections)
 

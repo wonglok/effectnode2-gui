@@ -38,9 +38,6 @@
   ],
   "isNode": true,
   "value": "0.44",
-  "MathModeA1": false,
-  "MathModeA2": false,
-  "MathModeA3": "MIX",
   "ArgsSize": 1,
   "MathMode": "FRACT"
 }

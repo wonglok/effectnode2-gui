@@ -1,5 +1,7 @@
 <template>
   <div class=" overflow-hidden relative w-full h-full"  ref="area">
+    <FloatedPreviewBox :running="true" :style="getEditPreviewStyle()" :wins="wins" :connections="connections"></FloatedPreviewBox>
+
     <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer pointer-events-none" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
     <div ref="DragArea" class="age-drag-area age-layer full"></div>
     <Box @gear="onGear({ win, wins, connections })" :offset="offset" @drop="onDropConnection" @clicker="onClickConnector" @click="onClickBox({ win, wins })" class="age-layer" :connections="connections" :previewDOMs="previewDOMs" :connectorDOMs="connectorDOMs" :wins="wins" v-for="(win) in wins" :key="win._id" :win="win"></Box>
@@ -13,7 +15,6 @@
 
     <EditBoxDetails @save="onSave()" :winID="currentWinID" :connections="connections" :wins="wins" class="age-layer" v-if="overlay === 'fix-module'"></EditBoxDetails>
 
-    <!-- <SinglePreviewLayer :running="overlay === 'fix-module'" :style="getEditPreviewStyle()" :wins="wins" :connections="connections"></SinglePreviewLayer> -->
   </div>
 </template>
 
@@ -45,7 +46,7 @@ import copy from 'copy-to-clipboard'
 
 export default {
   components: {
-    // SinglePreviewLayer: require('../uis-gl/SinglePreviewLayer.vue').default,
+    FloatedPreviewBox: require('../uis-gl/FloatedPreviewBox.vue').default,
     ToolBox: require('../uis-box/ToolBox.vue').default,
     PreviewLayer: require('../uis-gl/PreviewLayer.vue').default,
 
@@ -116,7 +117,7 @@ export default {
     //   // console.log(val)
     // },
     getEditPreviewStyle () {
-      const show = this.overlay === 'fix-module'
+      const show = true // || this.overlay === 'fix-module'
       if (show) {
         return {
           opacity: 1

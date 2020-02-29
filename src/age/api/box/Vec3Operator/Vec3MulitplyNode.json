@@ -46,9 +46,6 @@
   ],
   "isNode": true,
   "value": "0.44",
-  "MathModeA1": false,
-  "MathModeA2": false,
-  "MathModeA3": false,
   "ArgsSize": 1,
   "MathMode": false,
   "OperatorNode": "MUL"
