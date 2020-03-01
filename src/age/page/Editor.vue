@@ -67,10 +67,10 @@ export default {
       }
     }
   },
-  mounted () {
+  async mounted () {
     this.load()
     if (this.wins.length === 0) {
-      this.makeNew()
+      await this.loadJSON()
     }
 
     this.setupDrag({ dom: this.$refs.DragArea })
@@ -141,24 +141,9 @@ export default {
       copy(str)
       window.alert('copied')
     },
-    onReset () {
+    async onReset () {
       if (window.confirm('clear?')) {
-        window.localStorage.removeItem(this.STORAGE_NS)
-        const { connections, wins } = require('../code-templates/t1-demo.json')
-        this.connections = []
-        this.wins = []
-        this.$nextTick(() => {
-          this.$root.$forceUpdate()
-          window.dispatchEvent(new Event('plot'))
-          this.$nextTick(() => {
-            this.connections = connections
-            this.wins = wins
-            this.$nextTick(() => {
-              this.$root.$forceUpdate()
-              window.dispatchEvent(new Event('plot'))
-            })
-          })
-        })
+        this.loadJSON()
       }
     },
     goHome () {
@@ -169,23 +154,41 @@ export default {
         window.dispatchEvent(new Event('plot'))
       })
     },
-    makeNew () {
-      // AGE.BOX.makeDefaultBox({ wins: this.wins })
-      // AGE.BOX.makeDefaultBox({ wins: this.wins })
-
-      // this.connections.push({
-      //   output: this.wins[0].outputs[0],
-      //   input: this.wins[1].inputs[0]
-      // })
-
-      const { connections, wins } = require('../code-templates/t1-demo.json')
-      this.connections = connections
-      this.wins = wins
+    async loadJSON () {
+      window.localStorage.removeItem(this.STORAGE_NS)
+      const { connections, wins } = (await import('../code-templates/t1-demo.json')).default
+      this.connections = []
+      this.wins = []
       this.$nextTick(() => {
         this.$root.$forceUpdate()
         window.dispatchEvent(new Event('plot'))
+        this.$nextTick(() => {
+          this.connections = connections
+          this.wins = wins
+          this.$nextTick(() => {
+            this.$root.$forceUpdate()
+            window.dispatchEvent(new Event('plot'))
+          })
+        })
       })
     },
+    // makeNew () {
+    //   // AGE.BOX.makeDefaultBox({ wins: this.wins })
+    //   // AGE.BOX.makeDefaultBox({ wins: this.wins })
+
+    //   // this.connections.push({
+    //   //   output: this.wins[0].outputs[0],
+    //   //   input: this.wins[1].inputs[0]
+    //   // })
+
+    //   const { connections, wins } = require('../code-templates/t1-demo.json')
+    //   this.connections = connections
+    //   this.wins = wins
+    //   this.$nextTick(() => {
+    //     this.$root.$forceUpdate()
+    //     window.dispatchEvent(new Event('plot'))
+    //   })
+    // },
     clear () {
       if (window.confirm('clear?')) {
         window.localStorage.removeItem(this.STORAGE_NS)
