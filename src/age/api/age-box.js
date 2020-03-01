@@ -45,7 +45,7 @@ export const getWin = () => {
   }
 }
 
-export const cloneModule = (win) => {
+export const duplicateBox = (win) => {
   const cw = JSON.parse(JSON.stringify(win))
   cw._id = getID()
   cw.inputs.forEach((io) => {

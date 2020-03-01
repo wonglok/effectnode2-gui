@@ -23,174 +23,197 @@ limitations under the License.
     <div class="age-addbox-close-plane full" @click="close()">
     </div>
     <div class="age-addbox-content scroller" ref="scroller">
-      <h1>
+      <h1 class=" font-title text-xl">
         Advanced Module Edit
       </h1>
+      <div>
+        <div class="ml-0 border p-2 border-b-0 mx-1 inline-block font-title text-lg" :class="{ 'text-blue-300': tab === 'module' }" @click="tab = 'module'">
+          Module
+        </div>
+        <div class="border p-2 border-b-0 mx-1 inline-block font-title text-lg" :class="{ 'text-blue-300': tab === 'OperatorNode' }" @click="tab = 'OperatorNode'">
+          OperatorNode
+        </div>
+        <div class="border p-2 border-b-0 mx-1 inline-block font-title text-lg" :class="{ 'text-blue-300': tab === 'MathNode' }" @click="tab = 'MathNode'">
+          MathNode
+        </div>
+        <div class="border p-2 border-b-0 mx-1 inline-block font-title text-lg" :class="{ 'text-blue-300': tab === 'debug' }" @click="tab = 'debug'">
+          Debug
+        </div>
+      </div>
 
-      <h2 @click="copyModuleToClipBoard()">
-        Copy Module to Clipboard
-      </h2>
+      <div class="border p-3" v-if="tab === 'module'">
+        <div class="mb-2">
+          Box Title
+          <input class="border border-gray-200 p-2" placeholder="Box Title" type="text" v-model="win.title"  />
+        </div>
+        <div class="mb-2">
+          Node Class
+          <input class="border border-gray-200 p-2" placeholder="Node Class" type="text" v-model="win.NodeClass"  />
+        </div>
 
-      <h2 @click="duplicateBox()">
-        Duplicate Box
-      </h2>
+        <div class="mb-1">
+          <div class="ml-0 border p-3 mx-2 inline-block cursor-pointer" @click="copyModuleToClipBoard()">
+            Copy Module to Clipboard
+          </div>
 
-      <p>
-        Is Pinned
-        <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.pinned"  />
-      </p>
+          <div class="border p-3 mx-2 inline-block cursor-pointer" @click="duplicateBox()">
+            Duplicate Box
+          </div>
 
-      <p>
-        Is Material Node
-        <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.isMaterialNode"  />
-      </p>
-
-      <p>
-        Is Node
-        <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.isNode"  />
-      </p>
-
-      <p>
-        Node Class
-        <input class="border border-gray-200 p-2 m-1" type="text" v-model="win.NodeClass"  />
-      </p>
-
-      <p>
-        OperatorNode
-        <select v-model="win.OperatorNode">
-          <option :value="false">None</option>
-          <option :key="key" v-for="(val, key) in OperatorNode" :value="key">{{ key }}</option>
-        </select>
-      </p>
-
-      <p>
-        MathNode Mode
-        <select v-model="win.MathMode" @input="onSelectMath()" @change="onSelectMath()">
-          <option :value="false">None</option>
-          <optgroup label="Arg Size 1">
-            <option :key="key" v-for="(val, key) in MathNode.A1" :value="key">{{ key }}</option>
-          </optgroup>
-          <optgroup label="Arg Size 2">
-            <option :key="key" v-for="(val, key) in MathNode.A2" :value="key">{{ key }}</option>
-          </optgroup>
-          <optgroup label="Arg Size 3">
-            <option :key="key" v-for="(val, key) in MathNode.A3" :value="key">{{ key }}</option>
-          </optgroup>
-        </select>
-      </p>
-
-      <p>
-        MathNode Args Size
-        <select v-model="win.ArgsSize" disabled class=" text-red-400">
-          <option :value="1">1</option>
-          <option :value="2">2</option>
-          <option :value="3">3</option>
-        </select>
-      </p>
-
-      <p>
-        Resize Module Box
-        <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.resize"  />
-      </p>
-
-      <p>
-        Box Title
-        <input class="border border-gray-200 p-2 m-1" type="text" v-model="win.title"  />
-      </p>
-
-      <p>
-        Box Color
-        <select v-model="win.boxColor">
-          <option :key="ct" v-for="(cv, ct) in colorTypes" :value="ct">{{ ct }}</option>
-        </select>
-      </p>
-
-      <p>
-        Box Preview Type
-        <select v-model="win.previewType">
-          <option :value="false">No</option>
-          <option value="node-material">Node Material</option>
-        </select>
-      </p>
-      <!-- <div class="edit-mod-taller"></div> -->
-
-      <div v-if="win">
-        <h2>
-          Function Input
-        <button class="border border-gray-200 p-2 m-1" @click="addInput({ win })">Add Inputs</button>
-        </h2>
-
-        <div :key="input._id" v-for="(input, idx) in win.inputs">
-          <div>
-
-            Input Data Type:
-
-            <select v-model="input.type" @change="onChangeArgType({ input, value: $event.target.value })">
-              <option value="general">General Type</option>
-              <option value="float">Float</option>
-              <option value="vec4">Vector4</option>
-              <option value="vec3">Vector3</option>
-              <option value="vec2">Vector2</option>
-            </select>
-
-            Argument Name:
-            <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.label" @input="onChangeArgName({ input, value: input.label })">
-
-            <!-- Defaults:
-            <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.defaults"> -->
-
-            <button class="border border-gray-200 p-2 m-1" @click="removeInput({ input, idx, inputs: win.inputs })">Remove</button>
+          <div class="border p-3 mx-2 inline-block cursor-pointer text-red-600 bg-red-200" @click="removeWin({ win })">
+            Remove This
           </div>
         </div>
 
-        <h2>
-          Function Output
-        <button class="border border-gray-200 p-2 m-1" @click="addOutput({ win })">Add Outputs</button>
-
-        </h2>
-
-        <div :key="output._id" v-for="(output, idx) in win.outputs">
-          Output Data Type:
-
-          <select class="border border-gray-200 p-2 m-1" v-model="output.type" @change="onChangeArgType({ output, value: $event.target.value })">
-            <option value="general">General Type</option>
-            <option value="float">Float</option>
-            <option value="vec4">Vector4</option>
-            <option value="vec3">Vector3</option>
-            <option value="vec2">Vector2</option>
-          </select>
-
-          Argument Name:
-          <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.label" @output="onChangeArgName({ output, value: output.label })">
-
-          <button class="border border-gray-200 p-2 m-1" @click="removeOutput({ output, idx, outputs: win.outputs })">Remove</button>
-          <!-- Defaults:
-          <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.defaults"> -->
+        <div>
+          <OnOffSwitch :label="'Is Node'" v-model="win.isNode"></OnOffSwitch>
+          <OnOffSwitch :label="'Is Module Pinned'" v-model="win.pinned"></OnOffSwitch>
+          <OnOffSwitch :label="'Is Material Node'" v-model="win.isMaterialNode"></OnOffSwitch>
+          <OnOffSwitch :label="'Resize Module Box'" v-model="win.resize"></OnOffSwitch>
         </div>
 
-        <!-- <textarea v-model="win.data" cols="30" rows="10" @input="refresh()"></textarea> -->
-        <!-- <textarea v-model="win.fnInner" cols="30" rows="10" @input="compile"></textarea> -->
-        <!--  -->
-
+        <div class="border-b my-4"></div>
         <!-- <p>
-          Library
-        </p>
-        <Brace style="height: 200px;" :mode="'glsl'" :getter="() => win.fnExt" :setter="(v) => { win.fnExt = v }"></Brace>
+          Resize Module Box
+          <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.resize"  />
+        </p> -->
+
         <p>
-          Function Body
+          Box Color
+          <select v-model="win.boxColor">
+            <option :key="ct" v-for="(cv, ct) in colorTypes" :value="ct">{{ ct }}</option>
+          </select>
         </p>
 
-        <Brace style="height: 200px;" :mode="'glsl'" :getter="() => win.fnInner" :setter="(v) => { win.fnInner = v }"></Brace>
+        <p>
+        </p>
 
-        <pre>{{ win }}</pre> -->
-      </div>
-      <button @click="removeWin({ win })">Remove This</button>
-      <div>
-        <p>JSON</p>
-        <VJsoneditor style="height: 600px" v-model="win" :options="opts"></VJsoneditor>
+        <p>
+          Box Preview Type
+          <select v-model="win.previewType">
+            <option :value="false">No</option>
+            <option value="node-material">Node Material</option>
+          </select>
+        </p>
 
-        <!-- <pre>{{ win }}</pre> -->
+        <div v-if="win">
+          <div>
+            <h2 class="inline-block mx-3 font-title text-lg">
+              Function Input
+            </h2>
+            <button class="border border-gray-200 p-2 m-1" @click="addInput({ win })">Add Inputs</button>
+
+            <div :key="input._id" v-for="(input, idx) in win.inputs">
+              <div>
+
+                Input Data Type:
+
+                <select v-model="input.type" @change="onChangeArgType({ input, value: $event.target.value })">
+                  <option value="general">General Type</option>
+                  <option value="float">Float</option>
+                  <option value="vec4">Vector4</option>
+                  <option value="vec3">Vector3</option>
+                  <option value="vec2">Vector2</option>
+                </select>
+
+                Argument Name:
+                <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.label" @input="onChangeArgName({ input, value: input.label })">
+
+                <!-- Defaults:
+                <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.defaults"> -->
+
+                <button class="border border-gray-200 p-2 m-1" @click="removeInput({ input, idx, inputs: win.inputs })">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="inline-block mx-3 font-title text-lg">
+              Function Output
+            </h2>
+            <button class="border border-gray-200 p-2 m-1" @click="addOutput({ win })">Add Outputs</button>
+
+            <div :key="output._id" v-for="(output, idx) in win.outputs">
+              Output Data Type:
+
+              <select class="border border-gray-200 p-2 m-1" v-model="output.type" @change="onChangeArgType({ output, value: $event.target.value })">
+                <option value="general">General Type</option>
+                <option value="float">Float</option>
+                <option value="vec4">Vector4</option>
+                <option value="vec3">Vector3</option>
+                <option value="vec2">Vector2</option>
+              </select>
+
+              Argument Name:
+              <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.label" @output="onChangeArgName({ output, value: output.label })">
+
+              <button class="border border-gray-200 p-2 m-1" @click="removeOutput({ output, idx, outputs: win.outputs })">Remove</button>
+              <!-- Defaults:
+              <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.defaults"> -->
+            </div>
+          </div>
+
+          <div>
+            <p>JSON</p>
+            <VJsoneditor style="height: 600px" v-model="win" :options="opts"></VJsoneditor>
+          </div>
+
+          <!-- <textarea v-model="win.data" cols="30" rows="10" @input="refresh()"></textarea> -->
+          <!-- <textarea v-model="win.fnInner" cols="30" rows="10" @input="compile"></textarea> -->
+          <!--  -->
+
+          <!-- <p>
+            Library
+          </p>
+          <Brace style="height: 200px;" :mode="'glsl'" :getter="() => win.fnExt" :setter="(v) => { win.fnExt = v }"></Brace>
+          <p>
+            Function Body
+          </p>
+
+          <Brace style="height: 200px;" :mode="'glsl'" :getter="() => win.fnInner" :setter="(v) => { win.fnInner = v }"></Brace>
+
+          <pre>{{ win }}</pre> -->
+        </div>
       </div>
+      <div class="border p-3" v-if="tab === 'OperatorNode'">
+        <p>
+          OperatorNode
+          <select v-model="win.OperatorNode">
+            <option :value="false">None</option>
+            <option :key="key" v-for="(val, key) in OperatorNode" :value="key">{{ key }}</option>
+          </select>
+        </p>
+      </div>
+      <div class="border p-3" v-if="tab === 'MathNode'">
+        <p>
+          MathNode Mode
+          <select v-model="win.MathMode" @input="onSelectMath()" @change="onSelectMath()">
+            <option :value="false">None</option>
+            <optgroup label="Arg Size 1">
+              <option :key="key" v-for="(val, key) in MathNode.A1" :value="key">{{ key }}</option>
+            </optgroup>
+            <optgroup label="Arg Size 2">
+              <option :key="key" v-for="(val, key) in MathNode.A2" :value="key">{{ key }}</option>
+            </optgroup>
+            <optgroup label="Arg Size 3">
+              <option :key="key" v-for="(val, key) in MathNode.A3" :value="key">{{ key }}</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <p>
+          MathNode Args Size
+          <select v-model="win.ArgsSize" disabled class=" text-red-400">
+            <option :value="1">1</option>
+            <option :value="2">2</option>
+            <option :value="3">3</option>
+          </select>
+        </p>
+      </div>
+      <div class="border p-3" v-if="tab === 'debug'">
+
+      </div>
+
     </div>
     <div class="age-addbox-close" @click="close()">
       <img src="../icons/close.svg" alt="" />
@@ -205,6 +228,7 @@ import copy from 'copy-to-clipboard'
 
 export default {
   components: {
+    OnOffSwitch: require('./OnOffSwitch').default,
     VJsoneditor //,
     // Brace: require('./Brace.vue').default
   },
@@ -215,6 +239,7 @@ export default {
   },
   data () {
     return {
+      tab: 'module',
       MathNode: AGE.MathNode,
       OperatorNode: AGE.OperatorNode,
       colorTypes: AGE.boxColorTypes,
@@ -252,7 +277,7 @@ export default {
     copyModuleToClipBoard () {
       const str = JSON.stringify(this.win, null, '  ')
       copy(str)
-      window.alert('copied')
+      // window.alert('copied')
     },
     onSelectMath () {
       if (this.win.MathMode in this.MathNode.A1) {
