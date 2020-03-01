@@ -23,27 +23,6 @@ limitations under the License.
     <div class="age-addbox-close-plane full" @click="close()">
     </div>
     <div class="age-addbox-content scroller">
-
-      <!-- <h1>
-        Reset / Examples
-      </h1> -->
-      <!-- <div class="age-addbox-row">
-        <div class="age-addbox-menu-item">
-          <p>
-            <strong>Examples (Basic)</strong>
-          </p>
-          <button @click="addJSONTemplate('../code-templates/t1-demo.json')">Demo</button>
-        </div>
-      </div> -->
-      <!-- <div class="age-addbox-row">
-        <div class="age-addbox-menu-item">
-          <p>
-            <strong>Defaults</strong>
-          </p>
-          <button @click="adder('makeDefaultBox')">Default Box</button>
-        </div>
-      </div> -->
-
       <div :key="group" v-for="(list, group) in market">
         <h2 class=" font-title text-xl">{{ group }}</h2>
         <div :key="item.key" v-for="(item) in list" class=" cursor-pointer p-2 m-2 inline-block bg-gray-400" @click="installFromMarket(item.value)">
@@ -70,20 +49,6 @@ export default {
   data () {
     return {
       market: Market
-      // gorup -> items
-      // list: Object.keys(AGE.Market).reduce((ac, gpKN, idx) => {
-      //   const group = AGE.Market[gpKN]
-      //   const items = group.map(kn => {
-      //     return {
-      //       key: kn,
-      //       value: AGE.Market[kn]
-      //     }
-      //   }).sort((a, b) => {
-      //     return a.key - b.key
-      //   })
-
-      //   return ac
-      // }, [])
     }
   },
   mounted () {
@@ -107,39 +72,6 @@ export default {
       this.$parent.overlay = false
       this.$emit('save', true)
     }
-    // adder (method) {
-    //   const output = AGE.BOX[method]({ wins: this.wins })
-    //   if (output.hasBoth) {
-    //     output.vertex.pos.x = -this.offset.x + 30
-    //     output.vertex.pos.y = -this.offset.y + 30
-    //     output.fragment.pos.x = -this.offset.x + 60
-    //     output.fragment.pos.y = -this.offset.y + 60
-    //   } else {
-    //     output.pos.x = -this.offset.x + 30
-    //     output.pos.y = -this.offset.y + 30
-    //   }
-    //   this.close()
-    // }
-    // async loadJSON (v) {
-    //   if (v === '../code-templates/t1-demo.json') {
-    //     return (await import('../code-templates/t1-demo.json')).default
-    //   }
-    // },
-    // async addJSONTemplate (str) {
-    //   if (window.confirm('type "reset" to reset')) {
-    //     const { wins, connections } = await this.loadJSON(str)
-    //     console.log(wins, connections)
-    //     this.$emit('wins', [])
-    //     this.$emit('connections', [])
-    //     this.$root.$forceUpdate()
-
-    //     this.$nextTick(() => {
-    //       this.$emit('wins', wins)
-    //       this.$emit('connections', connections)
-    //       this.close()
-    //     })
-    //   }
-    // }
   }
 }
 </script>
