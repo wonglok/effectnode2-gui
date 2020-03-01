@@ -1,84 +1,6 @@
 {
   "wins": [
     {
-      "_id": "_74602415_",
-      "title": "FloatNode",
-      "NodeClass": "FloatNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 296,
-        "y": 686,
-        "w": 161,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "float",
-          "boxID": "_74602415_",
-          "io": "output",
-          "type": "float",
-          "_id": "_30777906_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0.01"
-    },
-    {
-      "_id": "_16455870_",
-      "title": "FloatSineNode",
-      "NodeClass": "MathNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 299,
-        "y": 604,
-        "w": 161,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [
-        {
-          "label": "a",
-          "boxID": "_16455870_",
-          "io": "input",
-          "type": "float",
-          "_id": "_47316486_",
-          "defaults": "0.0"
-        }
-      ],
-      "outputs": [
-        {
-          "label": "out",
-          "boxID": "_16455870_",
-          "io": "output",
-          "type": "float",
-          "_id": "_32311773_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0.44",
-      "MathModeA1": false,
-      "MathModeA2": false,
-      "MathModeA3": "MIX",
-      "ArgsSize": 1,
-      "MathMode": "SIN"
-    },
-    {
       "_id": "_4507432_",
       "title": "TextureNode",
       "NodeClass": "TextureNode",
@@ -143,6 +65,306 @@
       "isNode": true,
       "value": "0.28",
       "OperatorNode": false
+    },
+    {
+      "_id": "_82410227_",
+      "title": "TextureNode",
+      "NodeClass": "TextureNode",
+      "boxColor": "red",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 414,
+        "y": 22,
+        "w": 143,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "texture",
+          "boxID": "_82410227_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_69031836_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "value": "1.24",
+      "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/1bc5fb6d5b1546b2a0b80973152655b5.png"
+    },
+    {
+      "_id": "_74602415_",
+      "title": "FloatNode",
+      "NodeClass": "FloatNode",
+      "boxColor": "purple",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 296,
+        "y": 686,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "float",
+          "boxID": "_74602415_",
+          "io": "output",
+          "type": "float",
+          "_id": "_30777906_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.16"
+    },
+    {
+      "_id": "_12777151_",
+      "title": "ColorNode",
+      "NodeClass": "ColorNode",
+      "boxColor": "green",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 495,
+        "y": 725,
+        "w": 169,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "color",
+          "boxID": "_12777151_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_99603706_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "color": "#412445"
+    },
+    {
+      "_id": "_21606661_",
+      "title": "TimerNode",
+      "NodeClass": "TimerNode",
+      "boxColor": "red",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 93,
+        "y": 569,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "time",
+          "boxID": "_21606661_",
+          "io": "output",
+          "type": "float",
+          "_id": "_60338823_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "1.24"
+    },
+    {
+      "_id": "_26106057_",
+      "title": "ColorNode",
+      "NodeClass": "ColorNode",
+      "boxColor": "green",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 682,
+        "y": 792,
+        "w": 169,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "color",
+          "boxID": "_26106057_",
+          "io": "output",
+          "type": "vec3",
+          "_id": "_68583249_",
+          "defaults": "vec3(0.0, 0.0, 0.0)"
+        }
+      ],
+      "isNode": true,
+      "color": "#3FC2B5"
+    },
+    {
+      "_id": "_99107395_",
+      "title": "Preview Box",
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 978,
+        "y": 82,
+        "w": 279,
+        "h": 26,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [],
+      "previewType": "node-material",
+      "boxColor": "insta",
+      "fnExt": "",
+      "pinned": true
+    },
+    {
+      "_id": "_69925984_",
+      "title": "FractNode",
+      "NodeClass": "MathNode",
+      "boxColor": "blue",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 498,
+        "y": 403,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_69925984_",
+          "io": "input",
+          "type": "general",
+          "_id": "_28391726_",
+          "defaults": "0.0"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "out",
+          "boxID": "_69925984_",
+          "io": "output",
+          "type": "general",
+          "_id": "_60203676_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.44",
+      "ArgsSize": 1,
+      "MathMode": "FRACT"
+    },
+    {
+      "_id": "_27228614_",
+      "title": "TimerNode",
+      "NodeClass": "TimerNode",
+      "boxColor": "red",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 295,
+        "y": 393,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "time",
+          "boxID": "_27228614_",
+          "io": "output",
+          "type": "float",
+          "_id": "_6048771_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "1.24"
+    },
+    {
+      "_id": "_2476565_",
+      "title": "SineNode",
+      "NodeClass": "MathNode",
+      "boxColor": "blue",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 296,
+        "y": 587,
+        "w": 161,
+        "h": 62,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_2476565_",
+          "io": "input",
+          "type": "general",
+          "_id": "_43679338_",
+          "defaults": "0.0"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "out",
+          "boxID": "_2476565_",
+          "io": "output",
+          "type": "general",
+          "_id": "_63742349_",
+          "defaults": "0.0"
+        }
+      ],
+      "isNode": true,
+      "value": "0.44",
+      "ArgsSize": 1,
+      "MathMode": "SIN"
     },
     {
       "_id": "_50993217_",
@@ -264,10 +486,10 @@
       "isNode": true
     },
     {
-      "_id": "_42055345_",
-      "title": "FloatMixNode",
-      "NodeClass": "MathNode",
-      "boxColor": "purple",
+      "_id": "_99639208_",
+      "title": "MulitplyNode",
+      "NodeClass": "OperatorNode",
+      "boxColor": "blue",
       "isMaterialNode": false,
       "previewType": false,
       "type": "purple",
@@ -275,8 +497,57 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 754,
-        "y": 492,
+        "x": 496,
+        "y": 611,
+        "w": 161,
+        "h": 88,
+        "s": 1
+      },
+      "inputs": [
+        {
+          "label": "a",
+          "boxID": "_99639208_",
+          "io": "input",
+          "type": "general",
+          "_id": "_36068937_"
+        },
+        {
+          "label": "b",
+          "boxID": "_99639208_",
+          "io": "input",
+          "type": "general",
+          "_id": "_6632623_"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "out",
+          "boxID": "_99639208_",
+          "io": "output",
+          "type": "general",
+          "_id": "_61627350_"
+        }
+      ],
+      "isNode": true,
+      "value": "0.44",
+      "ArgsSize": 1,
+      "MathMode": false,
+      "OperatorNode": "MUL"
+    },
+    {
+      "_id": "_42055345_",
+      "title": "MixNode",
+      "NodeClass": "MathNode",
+      "boxColor": "blue",
+      "isMaterialNode": false,
+      "previewType": false,
+      "type": "purple",
+      "transition": "",
+      "order": 0,
+      "resize": true,
+      "pos": {
+        "x": 715,
+        "y": 478,
         "w": 161,
         "h": 114,
         "s": 1
@@ -286,17 +557,15 @@
           "label": "a",
           "boxID": "_42055345_",
           "io": "input",
-          "type": "float",
-          "_id": "_32007140_",
-          "defaults": "0.0"
+          "type": "general",
+          "_id": "_32007140_"
         },
         {
           "label": "b",
           "boxID": "_42055345_",
           "io": "input",
-          "type": "float",
-          "_id": "_16227874_",
-          "defaults": "0.0"
+          "type": "general",
+          "_id": "_16227874_"
         },
         {
           "label": "c",
@@ -312,9 +581,8 @@
           "label": "out",
           "boxID": "_42055345_",
           "io": "output",
-          "type": "float",
-          "_id": "_606456_",
-          "defaults": "0.0"
+          "type": "general",
+          "_id": "_606456_"
         }
       ],
       "isNode": true,
@@ -324,84 +592,6 @@
       "MathModeA3": "MIX",
       "ArgsSize": 3,
       "MathMode": "MIX"
-    },
-    {
-      "_id": "_12777151_",
-      "title": "ColorNode",
-      "NodeClass": "ColorNode",
-      "boxColor": "green",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 495,
-        "y": 732,
-        "w": 169,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "color",
-          "boxID": "_12777151_",
-          "io": "output",
-          "type": "vec3",
-          "_id": "_99603706_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
-        }
-      ],
-      "isNode": true,
-      "color": "#002720"
-    },
-    {
-      "_id": "_78820815_",
-      "title": "FractSineNode",
-      "NodeClass": "MathNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 498,
-        "y": 422,
-        "w": 161,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [
-        {
-          "label": "a",
-          "boxID": "_78820815_",
-          "io": "input",
-          "type": "float",
-          "_id": "_23924300_",
-          "defaults": "0.0"
-        }
-      ],
-      "outputs": [
-        {
-          "label": "out",
-          "boxID": "_78820815_",
-          "io": "output",
-          "type": "float",
-          "_id": "_85491605_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0.44",
-      "MathModeA1": false,
-      "MathModeA2": false,
-      "MathModeA3": "MIX",
-      "ArgsSize": 1,
-      "MathMode": "FRACT"
     },
     {
       "_id": "_77695719_",
@@ -415,8 +605,8 @@
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 499,
-        "y": 492,
+        "x": 496,
+        "y": 481,
         "w": 161,
         "h": 62,
         "s": 1
@@ -436,83 +626,19 @@
       "value": "1"
     },
     {
-      "_id": "_21606661_",
-      "title": "TimerNode",
-      "NodeClass": "TimerNode",
-      "boxColor": "red",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 114,
-        "y": 569,
-        "w": 161,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "time",
-          "boxID": "_21606661_",
-          "io": "output",
-          "type": "float",
-          "_id": "_60338823_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "1.24"
-    },
-    {
-      "_id": "_27228614_",
-      "title": "TimerNode",
-      "NodeClass": "TimerNode",
-      "boxColor": "red",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 295,
-        "y": 399,
-        "w": 161,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "time",
-          "boxID": "_27228614_",
-          "io": "output",
-          "type": "float",
-          "_id": "_6048771_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "1.24"
-    },
-    {
-      "_id": "_73502081_",
-      "title": "Vec3Mix",
+      "_id": "_87454261_",
+      "title": "MixNode",
       "NodeClass": "MathNode",
-      "boxColor": "purple",
+      "boxColor": "blue",
       "isMaterialNode": false,
       "previewType": false,
-      "type": "purple",
+      "type": "blue",
       "transition": "",
       "order": 0,
       "resize": true,
       "pos": {
-        "x": 640,
-        "y": 133,
+        "x": 654,
+        "y": 151,
         "w": 161,
         "h": 114,
         "s": 1
@@ -520,37 +646,34 @@
       "inputs": [
         {
           "label": "a",
-          "boxID": "_73502081_",
+          "boxID": "_87454261_",
           "io": "input",
-          "type": "vec3",
-          "_id": "_16566180_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
+          "type": "general",
+          "_id": "_25967825_"
         },
         {
           "label": "b",
-          "boxID": "_73502081_",
+          "boxID": "_87454261_",
           "io": "input",
-          "type": "vec3",
-          "_id": "_16809735_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
+          "type": "general",
+          "_id": "_35273394_"
         },
         {
           "label": "c",
-          "boxID": "_73502081_",
+          "boxID": "_87454261_",
           "io": "input",
           "type": "float",
-          "_id": "_13668634_",
+          "_id": "_72646840_",
           "defaults": "0.0"
         }
       ],
       "outputs": [
         {
           "label": "out",
-          "boxID": "_73502081_",
+          "boxID": "_87454261_",
           "io": "output",
-          "type": "vec3",
-          "_id": "_58741374_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
+          "type": "general",
+          "_id": "_87268093_"
         }
       ],
       "isNode": true,
@@ -560,182 +683,9 @@
       "MathModeA3": "MIX",
       "ArgsSize": 3,
       "MathMode": "MIX"
-    },
-    {
-      "_id": "_99639208_",
-      "title": "FloatMulitplyNode",
-      "NodeClass": "OperatorNode",
-      "boxColor": "purple",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 497,
-        "y": 610,
-        "w": 161,
-        "h": 88,
-        "s": 1
-      },
-      "inputs": [
-        {
-          "label": "a",
-          "boxID": "_99639208_",
-          "io": "input",
-          "type": "float",
-          "_id": "_36068937_",
-          "defaults": "0.0"
-        },
-        {
-          "label": "b",
-          "boxID": "_99639208_",
-          "io": "input",
-          "type": "float",
-          "_id": "_6632623_",
-          "defaults": "0.0"
-        }
-      ],
-      "outputs": [
-        {
-          "label": "out",
-          "boxID": "_99639208_",
-          "io": "output",
-          "type": "float",
-          "_id": "_61627350_",
-          "defaults": "0.0"
-        }
-      ],
-      "isNode": true,
-      "value": "0.44",
-      "ArgsSize": 1,
-      "MathMode": false,
-      "OperatorNode": "MUL"
-    },
-    {
-      "_id": "_26106057_",
-      "title": "ColorNode",
-      "NodeClass": "ColorNode",
-      "boxColor": "green",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 683,
-        "y": 798,
-        "w": 169,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "color",
-          "boxID": "_26106057_",
-          "io": "output",
-          "type": "vec3",
-          "_id": "_68583249_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
-        }
-      ],
-      "isNode": true,
-      "color": "#BF457B"
-    },
-    {
-      "_id": "_99107395_",
-      "title": "Preview Box",
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 977,
-        "y": 71,
-        "w": 279,
-        "h": 26,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [],
-      "previewType": "node-material",
-      "boxColor": "insta",
-      "fnExt": ""
-    },
-    {
-      "_id": "_82410227_",
-      "title": "TextureNode",
-      "NodeClass": "TextureNode",
-      "boxColor": "red",
-      "isMaterialNode": false,
-      "previewType": false,
-      "type": "purple",
-      "transition": "",
-      "order": 0,
-      "resize": true,
-      "pos": {
-        "x": 414,
-        "y": 22,
-        "w": 143,
-        "h": 62,
-        "s": 1
-      },
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "texture",
-          "boxID": "_82410227_",
-          "io": "output",
-          "type": "vec3",
-          "_id": "_69031836_",
-          "defaults": "vec3(0.0, 0.0, 0.0)"
-        }
-      ],
-      "isNode": true,
-      "value": "1.24",
-      "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/1bc5fb6d5b1546b2a0b80973152655b5.png"
     }
   ],
   "connections": [
-    {
-      "input": {
-        "label": "b",
-        "boxID": "_42055345_",
-        "io": "input",
-        "type": "float",
-        "_id": "_16227874_",
-        "defaults": "0.0"
-      },
-      "output": {
-        "label": "float",
-        "boxID": "_77695719_",
-        "io": "output",
-        "type": "float",
-        "_id": "_98478489_",
-        "defaults": "0.0"
-      }
-    },
-    {
-      "input": {
-        "label": "b",
-        "boxID": "_73502081_",
-        "io": "input",
-        "type": "vec3",
-        "_id": "_16809735_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      },
-      "output": {
-        "label": "texture",
-        "boxID": "_4507432_",
-        "io": "output",
-        "type": "vec3",
-        "_id": "_28688588_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      }
-    },
     {
       "input": {
         "label": "shadow",
@@ -756,37 +706,72 @@
     },
     {
       "input": {
-        "label": "a",
-        "boxID": "_73502081_",
+        "label": "emissive",
+        "boxID": "_50993217_",
         "io": "input",
         "type": "vec3",
-        "_id": "_16566180_",
+        "_id": "_51160278_",
         "defaults": "vec3(0.0, 0.0, 0.0)"
       },
       "output": {
-        "label": "texture",
-        "boxID": "_82410227_",
+        "label": "color",
+        "boxID": "_12777151_",
         "io": "output",
         "type": "vec3",
-        "_id": "_69031836_",
+        "_id": "_99603706_",
         "defaults": "vec3(0.0, 0.0, 0.0)"
       }
     },
     {
       "input": {
         "label": "b",
-        "boxID": "_99639208_",
+        "boxID": "_42055345_",
         "io": "input",
-        "type": "float",
-        "_id": "_6632623_",
-        "defaults": "0.0"
+        "type": "general",
+        "_id": "_16227874_"
       },
       "output": {
         "label": "float",
-        "boxID": "_74602415_",
+        "boxID": "_77695719_",
         "io": "output",
         "type": "float",
-        "_id": "_30777906_",
+        "_id": "_98478489_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "a",
+        "boxID": "_2476565_",
+        "io": "input",
+        "type": "general",
+        "_id": "_43679338_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "time",
+        "boxID": "_21606661_",
+        "io": "output",
+        "type": "float",
+        "_id": "_60338823_",
+        "defaults": "0.0"
+      }
+    },
+    {
+      "input": {
+        "label": "a",
+        "boxID": "_69925984_",
+        "io": "input",
+        "type": "general",
+        "_id": "_28391726_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "time",
+        "boxID": "_27228614_",
+        "io": "output",
+        "type": "float",
+        "_id": "_6048771_",
         "defaults": "0.0"
       }
     },
@@ -811,72 +796,34 @@
     {
       "input": {
         "label": "a",
-        "boxID": "_16455870_",
-        "io": "input",
-        "type": "float",
-        "_id": "_47316486_",
-        "defaults": "0.0"
-      },
-      "output": {
-        "label": "time",
-        "boxID": "_21606661_",
-        "io": "output",
-        "type": "float",
-        "_id": "_60338823_",
-        "defaults": "0.0"
-      }
-    },
-    {
-      "input": {
-        "label": "a",
         "boxID": "_99639208_",
         "io": "input",
-        "type": "float",
-        "_id": "_36068937_",
-        "defaults": "0.0"
+        "type": "general",
+        "_id": "_36068937_"
       },
       "output": {
         "label": "out",
-        "boxID": "_16455870_",
+        "boxID": "_2476565_",
         "io": "output",
-        "type": "float",
-        "_id": "_32311773_",
+        "type": "general",
+        "_id": "_63742349_",
         "defaults": "0.0"
       }
     },
     {
       "input": {
-        "label": "emissive",
-        "boxID": "_50993217_",
+        "label": "b",
+        "boxID": "_99639208_",
         "io": "input",
-        "type": "vec3",
-        "_id": "_51160278_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
+        "type": "general",
+        "_id": "_6632623_"
       },
       "output": {
-        "label": "color",
-        "boxID": "_12777151_",
-        "io": "output",
-        "type": "vec3",
-        "_id": "_99603706_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
-      }
-    },
-    {
-      "input": {
-        "label": "a",
-        "boxID": "_78820815_",
-        "io": "input",
-        "type": "float",
-        "_id": "_23924300_",
-        "defaults": "0.0"
-      },
-      "output": {
-        "label": "time",
-        "boxID": "_27228614_",
+        "label": "float",
+        "boxID": "_74602415_",
         "io": "output",
         "type": "float",
-        "_id": "_6048771_",
+        "_id": "_30777906_",
         "defaults": "0.0"
       }
     },
@@ -885,34 +832,15 @@
         "label": "a",
         "boxID": "_42055345_",
         "io": "input",
-        "type": "float",
-        "_id": "_32007140_",
-        "defaults": "0.0"
+        "type": "general",
+        "_id": "_32007140_"
       },
       "output": {
         "label": "out",
-        "boxID": "_78820815_",
+        "boxID": "_69925984_",
         "io": "output",
-        "type": "float",
-        "_id": "_85491605_",
-        "defaults": "0.0"
-      }
-    },
-    {
-      "input": {
-        "label": "c",
-        "boxID": "_73502081_",
-        "io": "input",
-        "type": "float",
-        "_id": "_13668634_",
-        "defaults": "0.0"
-      },
-      "output": {
-        "label": "float",
-        "boxID": "_14948435_",
-        "io": "output",
-        "type": "float",
-        "_id": "_39903673_",
+        "type": "general",
+        "_id": "_60203676_",
         "defaults": "0.0"
       }
     },
@@ -929,8 +857,59 @@
         "label": "out",
         "boxID": "_42055345_",
         "io": "output",
+        "type": "general",
+        "_id": "_606456_"
+      }
+    },
+    {
+      "input": {
+        "label": "a",
+        "boxID": "_87454261_",
+        "io": "input",
+        "type": "general",
+        "_id": "_25967825_"
+      },
+      "output": {
+        "label": "texture",
+        "boxID": "_82410227_",
+        "io": "output",
+        "type": "vec3",
+        "_id": "_69031836_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      }
+    },
+    {
+      "input": {
+        "label": "b",
+        "boxID": "_87454261_",
+        "io": "input",
+        "type": "general",
+        "_id": "_35273394_"
+      },
+      "output": {
+        "label": "texture",
+        "boxID": "_4507432_",
+        "io": "output",
+        "type": "vec3",
+        "_id": "_28688588_",
+        "defaults": "vec3(0.0, 0.0, 0.0)"
+      }
+    },
+    {
+      "input": {
+        "label": "c",
+        "boxID": "_87454261_",
+        "io": "input",
         "type": "float",
-        "_id": "_606456_",
+        "_id": "_72646840_",
+        "defaults": "0.0"
+      },
+      "output": {
+        "label": "float",
+        "boxID": "_14948435_",
+        "io": "output",
+        "type": "float",
+        "_id": "_39903673_",
         "defaults": "0.0"
       }
     },
@@ -945,11 +924,10 @@
       },
       "output": {
         "label": "out",
-        "boxID": "_73502081_",
+        "boxID": "_87454261_",
         "io": "output",
-        "type": "vec3",
-        "_id": "_58741374_",
-        "defaults": "vec3(0.0, 0.0, 0.0)"
+        "type": "general",
+        "_id": "_87268093_"
       }
     }
   ]

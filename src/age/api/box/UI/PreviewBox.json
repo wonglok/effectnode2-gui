@@ -3,6 +3,7 @@
   "title": "Preview Box",
   "type": "purple",
   "transition": "",
+  "pinned": true,
   "order": 0,
   "resize": true,
   "pos": {

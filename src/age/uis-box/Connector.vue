@@ -76,11 +76,15 @@ const DnDFactory = () => {
               handData &&
               landData.boxID !== handData.boxID &&
               landData.io !== handData.io &&
-              landData.type === handData.type &&
               (
                 landData.shader === handData.shader ||
                 landData.shader === AGE.NS.SHADER_TYPES.BOTH ||
                 handData.shader === AGE.NS.SHADER_TYPES.BOTH
+              ) &&
+              (
+                landData.type === handData.type ||
+                handData.type === AGE.NS.DATA_TYPES.GENERAL ||
+                landData.type === AGE.NS.DATA_TYPES.GENERAL
               )
           }
 

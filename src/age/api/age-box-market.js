@@ -19,10 +19,9 @@ importAll('UI', require.context('./box/UI', true, /\.json$/))
 importAll('Material', require.context('./box/Material', true, /\.json$/))
 importAll('Input', require.context('./box/Input', true, /\.json$/))
 
-importAll('FloatMath', require.context('./box/FloatMath', true, /\.json$/))
-importAll('Vec3Math', require.context('./box/Vec3Math', true, /\.json$/))
+importAll('MathFunctions', require.context('./box/MathFunctions', true, /\.json$/))
+importAll('MathOperator', require.context('./box/MathOperator', true, /\.json$/))
 
-importAll('FloatOperator', require.context('./box/FloatOperator', true, /\.json$/))
-importAll('Vec3Operator', require.context('./box/Vec3Operator', true, /\.json$/))
-
-//
+// importAll('Vec3Math', require.context('./box/Vec3Math', true, /\.json$/))
+// importAll('FloatOperator', require.context('./box/FloatOperator', true, /\.json$/))
+// importAll('Vec3Operator', require.context('./box/Vec3Operator', true, /\.json$/))

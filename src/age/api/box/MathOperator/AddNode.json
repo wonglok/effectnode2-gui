@@ -1,6 +1,6 @@
 {
   "_id": "_21488056_",
-  "title": "FloatOpDivisionNode",
+  "title": "FloatAddNode",
   "NodeClass": "OperatorNode",
   "boxColor": "purple",
   "isMaterialNode": false,
@@ -21,7 +21,7 @@
       "label": "a",
       "boxID": "_21488056_",
       "io": "input",
-      "type": "vec3",
+      "type": "general",
       "_id": "_31184338_",
       "defaults": "0.0"
     },
@@ -29,7 +29,7 @@
       "label": "b",
       "boxID": "_21488056_",
       "io": "input",
-      "type": "vec3",
+      "type": "general",
       "_id": "_10700597_",
       "defaults": "0.0"
     }
@@ -39,7 +39,7 @@
       "label": "out",
       "boxID": "_21488056_",
       "io": "output",
-      "type": "vec3",
+      "type": "general",
       "_id": "_74643585_",
       "defaults": "0.0"
     }
@@ -48,5 +48,5 @@
   "value": "0.44",
   "ArgsSize": 1,
   "MathMode": false,
-  "OperatorNode": "DIV"
+  "OperatorNode": "ADD"
 }

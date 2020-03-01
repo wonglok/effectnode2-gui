@@ -26,12 +26,15 @@ limitations under the License.
       <h1>
         Advanced Module Edit
       </h1>
+
       <h2 @click="copyModuleToClipBoard()">
         Copy Module to Clipboard
       </h2>
+
       <h2 @click="duplicateBox()">
         Duplicate Box
       </h2>
+
       <p>
         Is Pinned
         <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.pinned"  />
@@ -41,6 +44,7 @@ limitations under the License.
         Is Material Node
         <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.isMaterialNode"  />
       </p>
+
       <p>
         Is Node
         <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.isNode"  />
@@ -77,7 +81,7 @@ limitations under the License.
 
       <p>
         MathNode Args Size
-        <select v-model="win.ArgsSize" disabled>
+        <select v-model="win.ArgsSize" disabled class=" text-red-400">
           <option :value="1">1</option>
           <option :value="2">2</option>
           <option :value="3">3</option>
@@ -122,6 +126,7 @@ limitations under the License.
             Input Data Type:
 
             <select v-model="input.type" @change="onChangeArgType({ input, value: $event.target.value })">
+              <option value="general">General Type</option>
               <option value="float">Float</option>
               <option value="vec4">Vector4</option>
               <option value="vec3">Vector3</option>
@@ -148,6 +153,7 @@ limitations under the License.
           Output Data Type:
 
           <select class="border border-gray-200 p-2 m-1" v-model="output.type" @change="onChangeArgType({ output, value: $event.target.value })">
+            <option value="general">General Type</option>
             <option value="float">Float</option>
             <option value="vec4">Vector4</option>
             <option value="vec3">Vector3</option>

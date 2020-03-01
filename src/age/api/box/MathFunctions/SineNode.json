@@ -1,17 +1,17 @@
 {
-  "_id": "_16455870_",
-  "title": "FloatSineNode",
+  "_id": "_2476565_",
+  "title": "SineNode",
   "NodeClass": "MathNode",
-  "boxColor": "purple",
+  "boxColor": "blue",
   "isMaterialNode": false,
   "previewType": false,
-  "type": "purple",
+  "type": "blue",
   "transition": "",
   "order": 0,
   "resize": true,
   "pos": {
-    "x": 375,
-    "y": 417,
+    "x": 296,
+    "y": 593,
     "w": 161,
     "h": 62,
     "s": 1
@@ -19,20 +19,20 @@
   "inputs": [
     {
       "label": "a",
-      "boxID": "_16455870_",
+      "boxID": "_2476565_",
       "io": "input",
-      "type": "vec3",
-      "_id": "_47316486_",
+      "type": "general",
+      "_id": "_43679338_",
       "defaults": "0.0"
     }
   ],
   "outputs": [
     {
       "label": "out",
-      "boxID": "_16455870_",
+      "boxID": "_2476565_",
       "io": "output",
-      "type": "vec3",
-      "_id": "_32311773_",
+      "type": "general",
+      "_id": "_63742349_",
       "defaults": "0.0"
     }
   ],

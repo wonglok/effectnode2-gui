@@ -129,6 +129,8 @@ export const NS = {
     SAMPLER2D: 'sampler2D',
     TEXTURE2D: 'texture2D',
 
+    GENERAL: 'general',
+
     VEC4: 'vec4',
     VEC3: 'vec3',
     VEC2: 'vec2',
@@ -161,6 +163,9 @@ export const connectorColorTypes = {
 
   'sampler2D': `#F72626`,
   'float': `#1FC938`,
+
+  'general': `hsl(188, 93%, 55%)`,
+
   'vec2': `hsl(38, 93%, 66%)`,
   'vec3': `hsl(38, 93%, 55%)`,
   'vec4': `hsl(38, 93%, 35%)`,
