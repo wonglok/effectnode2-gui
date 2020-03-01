@@ -54,6 +54,7 @@ limitations under the License.
         <CubeImageLink class="" v-if="win.NodeClass === 'CubeTextureNode'" :win="win"></CubeImageLink>
         <ImageLink class="" v-if="win.NodeClass === 'TextureNode'" :win="win"></ImageLink>
         <ColorPicker class="full" v-if="win.NodeClass === 'ColorNode'" :win="win"></ColorPicker>
+        <MagicInput class="" :ui="{ type: 'ui-vec3' }" v-if="win.NodeClass === 'Vector3Node'" :win="win"></MagicInput>
         <MagicInput class="" :ui="{ type: 'ui-float' }" v-if="win.NodeClass === 'FloatNode'" :win="win"></MagicInput>
         <PreviewRect v-if="win.previewType" :win="win" :previewDOMs="previewDOMs"></PreviewRect>
       </div>

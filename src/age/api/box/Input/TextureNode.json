@@ -1,5 +1,5 @@
 {
-  "_id": "_4507432_",
+  "_id": "_82410227_",
   "title": "TextureNode",
   "NodeClass": "TextureNode",
   "boxColor": "red",
@@ -10,8 +10,8 @@
   "order": 0,
   "resize": true,
   "pos": {
-    "x": 256,
-    "y": 103,
+    "x": 266,
+    "y": 16,
     "w": 143,
     "h": 62,
     "s": 1
@@ -19,23 +19,23 @@
   "inputs": [
     {
       "label": "uv",
-      "boxID": "_4507432_",
+      "boxID": "_82410227_",
       "io": "input",
       "type": "general",
-      "_id": "_94369594_"
+      "_id": "_59160930_"
     }
   ],
   "outputs": [
     {
       "label": "texture",
-      "boxID": "_4507432_",
+      "boxID": "_82410227_",
       "io": "output",
       "type": "vec3",
-      "_id": "_28688588_",
+      "_id": "_69031836_",
       "defaults": "vec3(0.0, 0.0, 0.0)"
     }
   ],
   "isNode": true,
   "value": "1.24",
-  "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/8a254874bf7f49e7863f0c3cc28efa3d.png"
+  "src": "https://api-ec2-3-91-80-85.creativecodelab.com/uploads/1bc5fb6d5b1546b2a0b80973152655b5.png"
 }

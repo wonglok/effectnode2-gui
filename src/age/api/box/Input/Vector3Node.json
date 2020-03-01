@@ -1,0 +1,32 @@
+{
+  "_id": "_77695719_",
+  "title": "Vector3Node",
+  "NodeClass": "Vector3Node",
+  "boxColor": "purple",
+  "isMaterialNode": false,
+  "previewType": false,
+  "type": "purple",
+  "transition": "",
+  "order": 0,
+  "resize": true,
+  "pos": {
+    "x": 15,
+    "y": 15,
+    "w": 161,
+    "h": 62,
+    "s": 1
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "label": "vec3",
+      "boxID": "_77695719_",
+      "io": "output",
+      "type": "vec3",
+      "_id": "_98478489_",
+      "defaults": "0.0"
+    }
+  ],
+  "isNode": true,
+  "value": "1.0"
+}

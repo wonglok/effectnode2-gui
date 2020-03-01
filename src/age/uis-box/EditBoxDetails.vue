@@ -87,7 +87,7 @@ limitations under the License.
           </div>
 
           <div class="border p-3 mx-2 inline-block cursor-pointer text-red-600 bg-red-200" @click="removeWin({ win })">
-            Remove This
+            Remove This Module
           </div>
         </div>
 
@@ -129,7 +129,7 @@ limitations under the License.
                 <!-- Defaults:
                 <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.defaults"> -->
 
-                <button class="border border-gray-200 p-2 m-1 bg-red-200" @click="removeInput({ input, idx, inputs: win.inputs })">Remove</button>
+                <button class="border border-gray-200 p-2 m-1 bg-red-200" @click="removeInput({ input, idx, inputs: win.inputs })">Remove IO</button>
               </div>
             </div>
           </div>
@@ -168,7 +168,7 @@ limitations under the License.
               Prop Name:
               <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.label" @output="onChangeArgName({ output, value: output.label })">
 
-              <button class="border border-gray-200 p-2 m-1 bg-red-200" @click="removeOutput({ output, idx, outputs: win.outputs })">Remove</button>
+              <button class="border border-gray-200 p-2 m-1 bg-red-200" @click="removeOutput({ output, idx, outputs: win.outputs })">Remove IO</button>
               <!-- Defaults:
               <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.defaults"> -->
             </div>

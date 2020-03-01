@@ -24,6 +24,11 @@ limitations under the License.
     <path style="transform: translateY(3px)" :fill="'transparent'" stroke-width="1" :stroke="getStroke('g')" stroke-linecap="round" v-if="path" :d="path" />
     <path style="transform: translateY(-3px)" :fill="'transparent'" stroke-width="1" :stroke="getStroke('b')" stroke-linecap="round" v-if="path" :d="path" />
   </g>
+  <g v-else-if="connection.input.type === 'general'">
+    <path :fill="'transparent'" stroke-width="1" :stroke="getStroke('b')" stroke-linecap="round" v-if="path" :d="path" />
+    <path style="transform: translateY(2px)" :fill="'transparent'" stroke-width="1" :stroke="getStroke('ccc')" stroke-linecap="round" v-if="path" :d="path" />
+    <path style="transform: translateY(-2px)" :fill="'transparent'" stroke-width="1" :stroke="getStroke('ccc')" stroke-linecap="round" v-if="path" :d="path" />
+  </g>
   <g v-else-if="connection.input.type === 'vec2'">
     <path style="transform: translateY(2px)" :fill="'transparent'" stroke-width="1" :stroke="getStroke('u')" stroke-linecap="round" v-if="path" :d="path" />
     <path style="transform: translateY(-2px)" :fill="'transparent'" stroke-width="1" :stroke="getStroke('v')" stroke-linecap="round" v-if="path" :d="path" />

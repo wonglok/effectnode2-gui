@@ -1,0 +1,32 @@
+{
+  "_id": "_99032528_",
+  "title": "PositionNode",
+  "NodeClass": "PositionNode",
+  "boxColor": "red",
+  "isMaterialNode": false,
+  "previewType": false,
+  "type": "red",
+  "transition": "",
+  "order": 0,
+  "pinned": false,
+  "resize": true,
+  "pos": {
+    "x": 39,
+    "y": 109,
+    "w": 158,
+    "h": 62,
+    "s": 1
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "label": "vec3",
+      "boxID": "_99032528_",
+      "io": "output",
+      "type": "general",
+      "_id": "_7840840_"
+    }
+  ],
+  "isNode": true,
+  "value": "1.0"
+}

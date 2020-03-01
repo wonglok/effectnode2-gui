@@ -62,6 +62,14 @@ export const makeMat = async ({ wins, connections }) => {
       }
     })
 
+    wins.filter(e => e.NodeClass === 'Vector3Node').forEach((win) => {
+      if (nodes[win._id]) {
+        nodes[win._id].value.x = Number(win.value0)
+        nodes[win._id].value.y = Number(win.value1)
+        nodes[win._id].value.z = Number(win.value2)
+      }
+    })
+
     wins.filter(e => e.NodeClass === 'TextureNode').forEach((win) => {
       if (nodes[win._id] && nodes[win._id].src !== win.src) {
         nodes[win._id].value = new TextureLoader().load(win.src)
