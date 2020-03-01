@@ -1,5 +1,5 @@
 <template>
-  <div class=" overflow-hidden relative w-full h-full"  ref="area">
+  <div v-if="refresher" class=" overflow-hidden relative w-full h-full"  ref="area">
 
     <ConnectionLines :offset="offset" ref="lines" @dom="setupDrag" class="age-layer pointer-events-none" :connections="connections" :connectorDOMs="connectorDOMs"></ConnectionLines>
     <div ref="DragArea" class="age-drag-area age-layer full"></div>
@@ -55,6 +55,7 @@ export default {
   },
   data () {
     return {
+      refresher: true,
       STORAGE_NS: 'AGE_EDITOR_V0',
       overlay: false,
       previewDOMs: [],
@@ -70,7 +71,8 @@ export default {
   async mounted () {
     this.load()
     if (this.wins.length === 0) {
-      await this.loadJSON()
+      const data = (await import('../code-templates/t1-demo.json')).default
+      await this.applyJSON({ data })
     }
 
     this.setupDrag({ dom: this.$refs.DragArea })
@@ -143,7 +145,8 @@ export default {
     },
     async onReset () {
       if (window.confirm('clear?')) {
-        this.loadJSON()
+        const data = (await import('../code-templates/t1-demo.json')).default
+        await this.applyJSON({ data })
       }
     },
     goHome () {
@@ -154,21 +157,37 @@ export default {
         window.dispatchEvent(new Event('plot'))
       })
     },
-    async loadJSON () {
-      window.localStorage.removeItem(this.STORAGE_NS)
-      const { connections, wins } = (await import('../code-templates/t1-demo.json')).default
-      this.connections = []
-      this.wins = []
-      this.$nextTick(() => {
-        this.$root.$forceUpdate()
-        window.dispatchEvent(new Event('plot'))
-        this.$nextTick(() => {
+    async applyJSON ({ data }) {
+      return new Promise((resolve) => {
+        this.offset = {
+          x: 0,
+          y: 0
+        }
+
+        window.localStorage.removeItem(this.STORAGE_NS)
+        const { connections, wins } = JSON.parse(JSON.stringify(data))
+        const refresh = () => {
+          this.$root.$forceUpdate()
+          this.$forceUpdate()
+          window.dispatchEvent(new Event('plot'))
+          window.dispatchEvent(new Event('save'))
+        }
+        const reload = () => {
+          return new Promise((resolve) => {
+            refresh()
+            this.$nextTick(() => {
+              refresh()
+              resolve()
+            })
+          })
+        }
+        this.$nextTick(async () => {
+          this.connections = []
+          this.wins = []
+          await reload()
           this.connections = connections
           this.wins = wins
-          this.$nextTick(() => {
-            this.$root.$forceUpdate()
-            window.dispatchEvent(new Event('plot'))
-          })
+          await reload()
         })
       })
     },
@@ -275,10 +294,10 @@ export default {
       this.$root.$forceUpdate()
       // console.log(JSON.stringify(this.connections, null, ' '))
     },
-    onClickConnector (conn) {
+    onClickConnector (connt) {
       let idx = -1
       this.connections.forEach((c, idxo) => {
-        if (c.input._id === conn._id || c.output._id === conn._id) {
+        if (c.input._id === connt._id || c.output._id === connt._id) {
           idx = idxo
         }
       })

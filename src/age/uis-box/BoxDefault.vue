@@ -26,6 +26,7 @@ limitations under the License.
           {{ $parent.win.title || 'New Box' }}
         </div>
         <div class="center">
+          <!-- <img class="age-gear click" @click="win.pinned = !win.pinned" src="../icons/gear.svg" alt=""> -->
           <img class="age-gear click" @click="$emit('gear', { win, connections })" src="../icons/gear.svg" alt="">
         </div>
       </div>
@@ -87,19 +88,25 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('ui-layout', () => {
-      if (!this.$refs.connectorsarea) {
-        return
-      }
-      if (this.win.preview) {
-        if (!this.win.pos.h) {
-          this.win.pos.h = this.$refs.connectorsarea.getBoundingClientRect().height + 200 + 26
-        }
-      } else {
-        this.win.pos.h = this.$refs.connectorsarea.getBoundingClientRect().height + 26
-      }
-    })
-    window.dispatchEvent(new Event('ui-layout'))
+    // window.addEventListener('ui-layout', () => {
+    //   if (!this.$refs.connectorsarea) {
+    //     return
+    //   }
+    //   if (this.win.preview) {
+    //     if (!this.win.pos.h) {
+    //       this.win.pos.h = this.$refs.connectorsarea.getBoundingClientRect().height + 200 + 26
+    //     }
+    //   } else {
+    //     this.win.pos.h = this.$refs.connectorsarea.getBoundingClientRect().height + 26
+    //   }
+    // })
+    // window.dispatchEvent(new Event('ui-layout'))
+
+    // const newH = this.$refs.connectorsarea.getBoundingClientRect().height + 26
+    // if (this.win.pos.h < newH) {
+    //   this.win.pos.h = newH
+    // }
+
     this.$parent.setupSubCompo({ subCompo: this })
   }
 }
