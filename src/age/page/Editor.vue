@@ -48,7 +48,7 @@ export default {
     PreviewLayer: require('../uis-gl/PreviewLayer.vue').default,
 
     EditBoxDetails: require('../uis-box/EditBoxDetails.vue').default,
-    AddBoxMenu: require('../uis-box/AddBoxMenu.vue').default,
+    AddBoxMenu: () => import('../uis-box/AddBoxMenu.vue'),
     ConnectionLines: require('../uis-box/ConnectionLines.vue').default,
     Box: require('../uis-box/Box.vue').default
   },
