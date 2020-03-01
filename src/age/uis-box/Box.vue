@@ -162,6 +162,7 @@ export default {
       h += this.win.NodeClass === 'ColorNode' ? 215 : 0
       h += this.win.NodeClass === 'FloatNode' ? 40 : 0
       h += this.win.NodeClass === 'TextureNode' ? 170 : 0
+      h += this.win.NodeClass === 'CubeTextureNode' ? 180 : 0
       return h
     },
     getBoxLayoutStyle () {

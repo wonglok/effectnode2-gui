@@ -97,7 +97,7 @@ export default {
   },
   methods: {
     installFromMarket (win) {
-      win = AGE.BOX.cloneModule(win)
+      win = AGE.BOX.duplicateBox(win)
       win.pos.x = 30 - this.offset.x
       win.pos.y = 30 - this.offset.y
       this.wins.push(win)

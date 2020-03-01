@@ -51,6 +51,7 @@ limitations under the License.
         </div>
       </div>
       <div class="full">
+        <CubeImageLink class="" v-if="win.NodeClass === 'CubeTextureNode'" :win="win"></CubeImageLink>
         <ImageLink class="" v-if="win.NodeClass === 'TextureNode'" :win="win"></ImageLink>
         <ColorPicker class="full" v-if="win.NodeClass === 'ColorNode'" :win="win"></ColorPicker>
         <MagicInput class="" :ui="{ type: 'ui-float' }" v-if="win.NodeClass === 'FloatNode'" :win="win"></MagicInput>
@@ -73,6 +74,7 @@ export default {
   components: {
     // AudioLoader: require('./AudioLoader.vue').default,
     // TextureLoader: require('./TextureLoader.vue').default,
+    CubeImageLink: require('./CubeImageLink.vue').default,
     ImageLink: require('./ImageLink.vue').default,
     MagicInput: require('./MagicInput.vue').default,
     PreviewRect: require('./PreviewRect.vue').default,

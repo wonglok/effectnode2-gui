@@ -1,4 +1,4 @@
-import { TextureLoader } from 'three'
+import { TextureLoader, CubeTextureLoader } from 'three'
 const Nodes = {
   ...require('three/examples/jsm/nodes/Nodes.js')
 }
@@ -22,6 +22,18 @@ export const makeNodeByWin = ({ win }) => {
   } else if (win.NodeClass === 'TextureNode') {
     inst = new Nodes[win.NodeClass](...[new TextureLoader().load(win.src)])
     inst.src = win.src
+  } else if (win.NodeClass === 'CubeTextureNode') {
+    inst = new Nodes[win.NodeClass](...[new CubeTextureLoader().load([
+      win.px, win.nx,
+      win.py, win.ny,
+      win.pz, win.nz
+    ])])
+    inst.px = win.px
+    inst.py = win.py
+    inst.pz = win.pz
+    inst.nx = win.nx
+    inst.ny = win.ny
+    inst.nz = win.nz
   } else {
     inst = new Nodes[win.NodeClass](...(win.args || []))
   }
@@ -53,6 +65,24 @@ export const makeMat = async ({ wins, connections }) => {
     wins.filter(e => e.NodeClass === 'TextureNode').forEach((win) => {
       if (nodes[win._id] && nodes[win._id].src !== win.src) {
         nodes[win._id].value = new TextureLoader().load(win.src)
+      }
+    })
+
+    wins.filter(e => e.NodeClass === 'CubeTextureNode').forEach((win) => {
+      const inst = nodes[win._id]
+      if (inst && (
+        inst.px !== win.px ||
+        inst.py !== win.py ||
+        inst.pz !== win.pz ||
+        inst.nx !== win.nx ||
+        inst.ny !== win.ny ||
+        inst.nz !== win.nz
+      )) {
+        nodes[win._id].value = new CubeTextureLoader().load([
+          win.px, win.nx,
+          win.py, win.ny,
+          win.pz, win.nz
+        ])
       }
     })
   }

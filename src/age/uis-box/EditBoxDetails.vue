@@ -78,7 +78,7 @@ limitations under the License.
         </div>
 
         <div class="mb-2">
-          <div class="ml-0 border p-3 mx-2 inline-block cursor-pointer" @click="copyModuleToClipBoard()">
+          <div class="ml-0 border p-3 mx-2 inline-block cursor-pointer bg-green-200" @click="copyModuleToClipBoard()">
             Copy Module to Clipboard
           </div>
 

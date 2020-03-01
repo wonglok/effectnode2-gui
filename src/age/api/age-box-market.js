@@ -19,6 +19,8 @@ importAll('UI', require.context('./box/UI', true, /\.json$/))
 importAll('Material', require.context('./box/Material', true, /\.json$/))
 importAll('Input', require.context('./box/Input', true, /\.json$/))
 
+importAll('Accessors', require.context('./box/Accessors', true, /\.json$/))
+
 importAll('MathFunctions', require.context('./box/MathFunctions', true, /\.json$/))
 importAll('MathOperator', require.context('./box/MathOperator', true, /\.json$/))
 
