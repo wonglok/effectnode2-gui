@@ -58,6 +58,7 @@ limitations under the License.
 </template>
 
 <script>
+import * as Market from '../api/age-box-market'
 import * as AGE from '../api/age'
 
 export default {
@@ -68,7 +69,7 @@ export default {
   },
   data () {
     return {
-      market: AGE.Market
+      market: Market
       // gorup -> items
       // list: Object.keys(AGE.Market).reduce((ac, gpKN, idx) => {
       //   const group = AGE.Market[gpKN]

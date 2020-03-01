@@ -21,6 +21,7 @@ import '../assets/util.css'
 import '../assets/app.css'
 import * as AGE from '../api/age'
 import copy from 'copy-to-clipboard'
+
 // import _ from 'lodash'
 
 // async function postData (url = '', data = {}) {
@@ -48,7 +49,7 @@ export default {
     PreviewLayer: require('../uis-gl/PreviewLayer.vue').default,
 
     EditBoxDetails: require('../uis-box/EditBoxDetails.vue').default,
-    AddBoxMenu: () => import('../uis-box/AddBoxMenu.vue'),
+    AddBoxMenu: () => import(/* webpackChunkName: "add-box-menu" */ '../uis-box/AddBoxMenu.vue'),
     ConnectionLines: require('../uis-box/ConnectionLines.vue').default,
     Box: require('../uis-box/Box.vue').default
   },

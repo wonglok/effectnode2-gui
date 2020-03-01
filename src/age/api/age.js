@@ -19,7 +19,7 @@ limitations under the License.
 export const UI = require('./age-ui.js')
 export const BOX = require('./age-box.js')
 export const VFX = require('./age-shader.js')
-export const Market = require('./age-box-market.js')
+// export const Market = require('./age-box-market.js')
 
 export const OperatorNode = {
   ADD: true,
