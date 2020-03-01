@@ -51,7 +51,33 @@ limitations under the License.
           <input class="border border-gray-200 p-2" placeholder="Node Class" type="text" v-model="win.NodeClass"  />
         </div>
 
-        <div class="mb-1">
+        <div class="mb-2">
+          Box Color
+          <div class="inline-flex relative w-40 flex-no-wrap">
+            <select class="inline-block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline" v-model="win.boxColor">
+              <option :key="ct" v-for="(cv, ct) in colorTypes" :value="ct">{{ ct }}</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          Box Preview Type
+          <div class="inline-flex relative w-40 flex-no-wrap">
+            <select v-model="win.previewType" class="inline-block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+              <option :value="false">No</option>
+              <option value="node-material">Node Material</option>
+              <!-- <option :key="ct" v-for="(cv, ct) in colorTypes" :value="ct">{{ ct }}</option> -->
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
           <div class="ml-0 border p-3 mx-2 inline-block cursor-pointer" @click="copyModuleToClipBoard()">
             Copy Module to Clipboard
           </div>
@@ -73,68 +99,63 @@ limitations under the License.
         </div>
 
         <div class="border-b my-4"></div>
-        <!-- <p>
-          Resize Module Box
-          <input class="border border-gray-200 p-2 m-1" type="checkbox" v-model="win.resize"  />
-        </p> -->
-
-        <p>
-          Box Color
-          <select v-model="win.boxColor">
-            <option :key="ct" v-for="(cv, ct) in colorTypes" :value="ct">{{ ct }}</option>
-          </select>
-        </p>
-
-        <p>
-        </p>
-
-        <p>
-          Box Preview Type
-          <select v-model="win.previewType">
-            <option :value="false">No</option>
-            <option value="node-material">Node Material</option>
-          </select>
-        </p>
 
         <div v-if="win">
           <div>
-            <h2 class="inline-block mx-3 font-title text-lg">
-              Function Input
+            <h2 class="inline-block mr-2 font-title text-lg">
+              Input
             </h2>
-            <button class="border border-gray-200 p-2 m-1" @click="addInput({ win })">Add Inputs</button>
+            <button class="border border-gray-200 p-2 m-1 bg-green-200" @click="addInput({ win })">Add Inputs</button>
 
             <div :key="input._id" v-for="(input, idx) in win.inputs">
               <div>
+                DataType:
+                <div class="inline-flex relative w-40 flex-no-wrap">
+                  <select v-model="input.type" @change="onChangeArgType({ input, value: $event.target.value })" class="inline-block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="general">General Type</option>
+                    <option value="float">Float</option>
+                    <option value="vec4">Vector4</option>
+                    <option value="vec3">Vector3</option>
+                    <option value="vec2">Vector2</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                  </div>
+                </div>
 
-                Input Data Type:
+                Prop Name:
+                <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.label" @input="onChangeArgName({ input, value: input.label })">
 
-                <select v-model="input.type" @change="onChangeArgType({ input, value: $event.target.value })">
+                <!-- Defaults:
+                <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.defaults"> -->
+
+                <button class="border border-gray-200 p-2 m-1 bg-red-200" @click="removeInput({ input, idx, inputs: win.inputs })">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="inline-block mr-2 font-title text-lg">
+              Output
+            </h2>
+            <button class="border border-gray-200 p-2 m-1 bg-green-200" @click="addOutput({ win })">Add Outputs</button>
+
+            <div :key="output._id" v-for="(output, idx) in win.outputs">
+              DataType:
+              <div class="inline-flex relative w-40 flex-no-wrap">
+                <select v-model="output.type" @change="onChangeArgType({ output, value: $event.target.value })" class="inline-block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
                   <option value="general">General Type</option>
                   <option value="float">Float</option>
                   <option value="vec4">Vector4</option>
                   <option value="vec3">Vector3</option>
                   <option value="vec2">Vector2</option>
                 </select>
-
-                Argument Name:
-                <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.label" @input="onChangeArgName({ input, value: input.label })">
-
-                <!-- Defaults:
-                <input class="border border-gray-200 p-2 m-1" type="text" v-model="input.defaults"> -->
-
-                <button class="border border-gray-200 p-2 m-1" @click="removeInput({ input, idx, inputs: win.inputs })">Remove</button>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div>
-            <h2 class="inline-block mx-3 font-title text-lg">
-              Function Output
-            </h2>
-            <button class="border border-gray-200 p-2 m-1" @click="addOutput({ win })">Add Outputs</button>
-
-            <div :key="output._id" v-for="(output, idx) in win.outputs">
-              Output Data Type:
+              <!-- Data Type:
 
               <select class="border border-gray-200 p-2 m-1" v-model="output.type" @change="onChangeArgType({ output, value: $event.target.value })">
                 <option value="general">General Type</option>
@@ -142,20 +163,15 @@ limitations under the License.
                 <option value="vec4">Vector4</option>
                 <option value="vec3">Vector3</option>
                 <option value="vec2">Vector2</option>
-              </select>
+              </select> -->
 
-              Argument Name:
+              Prop Name:
               <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.label" @output="onChangeArgName({ output, value: output.label })">
 
-              <button class="border border-gray-200 p-2 m-1" @click="removeOutput({ output, idx, outputs: win.outputs })">Remove</button>
+              <button class="border border-gray-200 p-2 m-1 bg-red-200" @click="removeOutput({ output, idx, outputs: win.outputs })">Remove</button>
               <!-- Defaults:
               <input class="border border-gray-200 p-2 m-1" type="text" v-model="output.defaults"> -->
             </div>
-          </div>
-
-          <div>
-            <p>JSON</p>
-            <VJsoneditor style="height: 600px" v-model="win" :options="opts"></VJsoneditor>
           </div>
 
           <!-- <textarea v-model="win.data" cols="30" rows="10" @input="refresh()"></textarea> -->
@@ -211,7 +227,9 @@ limitations under the License.
         </p>
       </div>
       <div class="border p-3" v-if="tab === 'debug'">
-
+        <div>
+          <VJsoneditor style="height: 600px" v-model="win" :options="opts"></VJsoneditor>
+        </div>
       </div>
 
     </div>
