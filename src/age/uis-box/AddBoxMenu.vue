@@ -24,7 +24,7 @@ limitations under the License.
     </div>
     <div class="age-addbox-content scroller">
       <div :key="group" v-for="(list, group) in market">
-        <h2 class=" font-title text-xl">{{ group }}</h2>
+        <h2 class="font-title text-xl">{{ group }}</h2>
         <div :key="item.key" v-for="(item) in list" class=" cursor-pointer p-2 m-2 inline-block bg-gray-400" @click="installFromMarket(item.value)">
           {{ item.key }}
         </div>
