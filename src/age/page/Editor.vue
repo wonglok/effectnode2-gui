@@ -71,7 +71,7 @@ export default {
   async mounted () {
     this.load()
     if (this.wins.length === 0) {
-      const data = (await import('../code-templates/t3-demo.json')).default
+      const data = (await import('../code-templates/t4-demo.json')).default
       await this.applyJSON({ data })
     }
 
@@ -145,7 +145,7 @@ export default {
     },
     async onReset () {
       if (window.confirm('clear?')) {
-        const data = (await import('../code-templates/t3-demo.json')).default
+        const data = (await import('../code-templates/t4-demo.json')).default
         await this.applyJSON({ data })
       }
     },
@@ -200,7 +200,7 @@ export default {
     //   //   input: this.wins[1].inputs[0]
     //   // })
 
-    //   const { connections, wins } = require('../code-templates/t3-demo.json')
+    //   const { connections, wins } = require('../code-templates/t4-demo.json')
     //   this.connections = connections
     //   this.wins = wins
     //   this.$nextTick(() => {
